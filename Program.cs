@@ -7,7 +7,7 @@
         // Use a switch statement to do the math.
         switch (op)
         {
-            case "a":
+            case "g":
                 result = num1 + num2;
                 break;
             case "s":
