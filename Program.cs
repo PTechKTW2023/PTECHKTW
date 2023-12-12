@@ -13,7 +13,7 @@
             case "skull":
                 result = num1 - num2;
                 break;
-            case "m":
+            case "rel":
                 result = num1 * num2;
                 break;
             case "d":
