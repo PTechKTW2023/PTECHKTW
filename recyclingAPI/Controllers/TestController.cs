@@ -18,8 +18,11 @@ namespace SuperHeroAPI_DotNet8.Controllers
         [HttpGet]
         public async Task<ActionResult<string>> GetAllHeroes()
         {
+            int wojtek = 1;
+            //fsdfsdfsdfds
             // cokolwiek
             //Test
+            //test2
             return Ok("Working");
         }
         
