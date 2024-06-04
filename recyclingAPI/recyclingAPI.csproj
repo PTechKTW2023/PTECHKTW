@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\SuperHeroController.cs" />
+    <Compile Remove="Entities\**" />
+    <Content Remove="Entities\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <None Remove="Entities\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,8 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Entities\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 
