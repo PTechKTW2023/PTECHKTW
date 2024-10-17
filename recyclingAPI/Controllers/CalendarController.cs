@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Components.Web.Virtualization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using recyclingAPI.Data;
+using recyclingAPI.DTOs;
 
-namespace SuperHeroAPI_DotNet8.Controllers
+
+
+namespace recyclingAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -34,9 +35,10 @@ namespace SuperHeroAPI_DotNet8.Controllers
             return Ok(calendarEntry);
         }
         [HttpPost]
-        public async Task<ActionResult<List<CalendarEntry>>> AddCalendarEntry(CalendarEntry entry)
+        public async Task<ActionResult<List<CalendarEntry>>> AddCalendarEntry(CalendarEntryDTO entry)
         {
-            _context.CalendarEntries.Add(entry);
+            Data.CalendarEntry dbCalendarEntry = ConvertToDatabaseObject(entry);
+            _context.CalendarEntries.Add(dbCalendarEntry);
             await _context.SaveChangesAsync();
 
             return Ok(await _context.CalendarEntries.ToListAsync());
@@ -69,6 +71,17 @@ namespace SuperHeroAPI_DotNet8.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(await _context.CalendarEntries.ToListAsync());
+        }
+
+        Data.CalendarEntry ConvertToDatabaseObject(DTOs.CalendarEntryDTO entry)
+        {
+            Data.CalendarEntry newEntry = new CalendarEntry();
+            newEntry.CompanyId = entry.CompanyId;
+            newEntry.Date = entry.Date;
+            newEntry.WasteType = new WasteType();
+            newEntry.WasteType.Name = entry.WasteType.Name;
+            newEntry.WasteType.IsADR = entry.WasteType.IsADR;
+            return newEntry;
         }
     }
 }

@@ -1,13 +1,12 @@
 using System;
 
-namespace recyclingAPI.Data
+namespace recyclingAPI.DTOs
 {
-    public class CalendarEntry
-    {
-        public int Id { get; set; }
+    public class CalendarEntryDTO
+    {     
         public DateTime Date { get; set; }
         public int CompanyId { get; set; }
-        public WasteType WasteType { get; set; }
+        public WasteTypeDTO WasteType { get; set; }
 
         /**
          

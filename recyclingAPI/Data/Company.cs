@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace recyclingAPI.Data
 {
     /*
@@ -5,10 +7,13 @@ namespace recyclingAPI.Data
      it is describing what types of wastes are handled by it
      there is also overall Cost of service and monthly limit
     */
-    
+
     public class Company
     {
         public int Id { get; set; }
+
+        [Required]
+        public string Name { get; set; }
         public List<WasteType> WasteType { get; set; }
 
          /*
