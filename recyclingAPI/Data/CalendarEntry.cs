@@ -1,3 +1,4 @@
+using recyclingAPI.DTOs;
 using System;
 
 namespace recyclingAPI.Data
@@ -8,6 +9,21 @@ namespace recyclingAPI.Data
         public DateTime Date { get; set; }
         public int CompanyId { get; set; }
         public WasteType WasteType { get; set; }
+
+        public CalendarEntry(CalendarEntryDTO entry)
+        {
+            CompanyId = entry.CompanyId;
+            Date = entry.Date;
+            WasteType = new WasteType();
+            WasteType.Name = entry.WasteType.Name;
+            WasteType.IsADR = entry.WasteType.IsADR;
+        }
+
+        public CalendarEntry()
+        {
+          
+        }
+
 
         /**
          

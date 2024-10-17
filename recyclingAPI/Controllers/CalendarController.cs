@@ -36,9 +36,8 @@ namespace recyclingAPI.Controllers
         }
         [HttpPost]
         public async Task<ActionResult<List<CalendarEntry>>> AddCalendarEntry(CalendarEntryDTO entry)
-        {
-            Data.CalendarEntry dbCalendarEntry = ConvertToDatabaseObject(entry);
-            _context.CalendarEntries.Add(dbCalendarEntry);
+        {            
+            _context.CalendarEntries.Add(new CalendarEntry(entry));
             await _context.SaveChangesAsync();
 
             return Ok(await _context.CalendarEntries.ToListAsync());
@@ -72,16 +71,6 @@ namespace recyclingAPI.Controllers
 
             return Ok(await _context.CalendarEntries.ToListAsync());
         }
-
-        Data.CalendarEntry ConvertToDatabaseObject(DTOs.CalendarEntryDTO entry)
-        {
-            Data.CalendarEntry newEntry = new CalendarEntry();
-            newEntry.CompanyId = entry.CompanyId;
-            newEntry.Date = entry.Date;
-            newEntry.WasteType = new WasteType();
-            newEntry.WasteType.Name = entry.WasteType.Name;
-            newEntry.WasteType.IsADR = entry.WasteType.IsADR;
-            return newEntry;
-        }
+      
     }
 }
