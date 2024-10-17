@@ -17,6 +17,7 @@ namespace recyclingAPI.Data
             WasteType = new WasteType();
             WasteType.Name = entry.WasteType.Name;
             WasteType.IsADR = entry.WasteType.IsADR;
+            WasteType.Unit = entry.WasteType.Unit;
         }
 
         public CalendarEntry()
