@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - STZN Books</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", false)
+    <script src="~/js/htmx.min.js" asp-append-version="true"></script>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li>
+                <strong>
+                    <a asp-area="" asp-page="/Index">Podręczniki</a>
+                </strong>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+            </li>
+           
+        </ul>
+    </nav>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="container">  
+    </footer>
+
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", false)
+</body>
+</html>
