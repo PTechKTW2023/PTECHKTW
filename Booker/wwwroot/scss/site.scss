@@ -1,28 +1,30 @@
-$enable-transitions: false;
+// $enable-transitions: false; // not really needed
 
-@import "../lib/pico-1.5.10/scss/pico";
-@import "./error.scss";
+@use "../lib/pico-2.0.6/scss/pico";
+@use "./error.scss";
 
-body {
-    > main {
-        display: flex;
-        flex-direction: column;
-        min-height: calc(100vh - 7rem);
-        padding: 1rem 0;
-    }
 
-    > footer {
-        padding: 1rem 0;
-    }
-}
+// start out fresh
+//body {
+//    > main {
+//        display: flex;
+//        flex-direction: column;
+//        min-height: calc(100vh - 7rem);
+//        padding: 1rem 0;
+//    }
 
-footer {
-    > div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
+//    > footer {
+//        padding: 1rem 0;
+//    }
+//}
+
+//footer {
+//    > div {
+//        display: flex;
+//        justify-content: space-between;
+//        align-items: center;
+//    }
+//}
 
 /*
     Show loading indicator on div or on button

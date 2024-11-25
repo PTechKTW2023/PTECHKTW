@@ -8,13 +8,9 @@
 
   <ItemGroup>
     <Compile Remove="wwwroot\img\**" />
-    <Compile Remove="wwwroot\lib\pico-1.5.10\.github\**" />
     <Content Remove="wwwroot\img\**" />
-    <Content Remove="wwwroot\lib\pico-1.5.10\.github\**" />
     <EmbeddedResource Remove="wwwroot\img\**" />
-    <EmbeddedResource Remove="wwwroot\lib\pico-1.5.10\.github\**" />
     <None Remove="wwwroot\img\**" />
-    <None Remove="wwwroot\lib\pico-1.5.10\.github\**" />
   </ItemGroup>
 
   <ItemGroup>
