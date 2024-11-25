@@ -3,6 +3,7 @@
 @use "../lib/pico-2.0.6/scss/pico";
 @use "./error.scss";
 
+@use "sass:map";
 
 // start out fresh
 //body {
@@ -25,6 +26,72 @@
 //        align-items: center;
 //    }
 //}
+
+.grid-gallery { // gallery on index page
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+a:has(article) { // card link, this code is needed because of pico
+    #{pico.$css-var-prefix}color: unset;
+    #{pico.$css-var-prefix}background-color: unset;
+    #{pico.$css-var-prefix}underline: unset;
+    #{pico.$css-var-prefix}text-decoration: unset;
+
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+        #{pico.$css-var-prefix}color: unset;
+        #{pico.$css-var-prefix}underline: unset;
+        #{pico.$css-var-prefix}text-decoration: underline;
+    }
+}
+
+.book-display { // book preview card
+    .image {
+        aspect-ratio: 1 / 1;
+        align-content: center;
+        padding: 1em;
+        border: 1px solid;
+    }
+
+    .actions button {
+        margin: 0.5em;
+    }
+
+    .seller > div {
+        display: flex;
+        img {
+            width: 50px;
+            height: 50px;
+            margin-block: 0.5em;
+            margin-right: 1em;
+            border-radius: 100%;
+        }
+        a[role="button"] {
+            margin-top: 0.5em;
+        }
+    }
+
+    @media (min-width: map.get(map.get(pico.$breakpoints, "lg"), "breakpoint")) {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: min-content 1fr;
+        
+
+        .image {
+            grid-row: span 2;
+        }
+
+        .description {
+            grid-column: span 2;
+        }
+
+        .seller {
+            grid-column: span 2;
+        }
+    }
+}
 
 /*
     Show loading indicator on div or on button

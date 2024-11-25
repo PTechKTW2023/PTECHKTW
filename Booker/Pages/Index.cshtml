@@ -3,3 +3,45 @@
 @{
     ViewData["Title"] = "htmx dotnet";
 }
+
+<section class="filter">
+    <input type="search" name="" placeholder="Wyszukaj..." aria-label="Wyszukaj" />
+    <div class="grid">
+        <select name="" aria-label="Klasa" required>
+            <option selected value="">
+                Wszystkie klasy
+            </option>
+            <option>Klasa 1.</option>
+            <option>Klasa 2.</option>
+            <option>Klasa 3.</option>
+            <option>Klasa 4.</option>
+            <option>Klasa 5.</option>
+        </select>
+        <select name="" aria-label="Przedmiot" required>
+            <option selected value="">
+                Wszystkie przedmioty
+            </option>
+            <option>Polski</option>
+            <option>Matematyka</option>
+            <option>Angielski</option>
+            <option>Biologia</option>
+            <option>Fizyka</option>
+        </select>
+    </div>
+</section>
+
+<section class="grid-gallery">
+    @for (int i = 0; i < 20; i++)
+    {
+        <a asp-area="" asp-page="/Book">
+            <article>
+                <img src="https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                <footer>
+                    <h3>Książka</h3>
+                    <p>21,37 zł</p>
+                    <small>Lorem ipsum dolor sit amet</small>
+                </footer>
+            </article>
+        </a>
+    }
+</section>

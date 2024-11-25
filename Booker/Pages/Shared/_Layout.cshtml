@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - STZN Books</title>
+    <title>@ViewData["Title"] - ŚlTZN Books</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     @await RenderSectionAsync("Styles", false)
     <script src="~/js/htmx.min.js" asp-append-version="true"></script>
@@ -19,7 +19,10 @@
         </ul>
         <ul>
             <li>
-                <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                <a asp-area="" asp-page="/Index">Strona główna</a>
+            </li>
+            <li>
+                <a role="button" class="outline" href="#">Zaloguj się</a>
             </li>
            
         </ul>
