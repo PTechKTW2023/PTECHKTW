@@ -1,0 +1,24 @@
+﻿@model Booker.Models.Item
+
+
+<article class="book-tile">
+    <img src="@Model.Photo" />
+    <footer>
+        <a asp-page="/Book">
+            <h3>@Model.Book.Title</h3>
+        </a>
+        <div class="flow-root">
+            <p>@Model.Price zł</p>
+            <p><small>ŚlTZN</small></p>
+            <button class="outline">@Model.Book.Subject</button>
+            <button class="outline">@Model.Book.GradeFullName()</button>
+            @if (Model.Book.Level is not null)
+            {
+                <button class="outline">@Model.Book.LevelFullName()</button>
+            }
+            <button class="outline fav" aria-label="Dodaj do ulubionych" title="Dodaj do ulubionych">
+                <svg><use href="img/icons.svg#si-awesome-star-o" /></svg>
+            </button>
+        </div>
+    </footer>
+</article>
