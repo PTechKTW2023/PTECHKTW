@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Booker.Data
 {
-    public class Item : Book
+    public class Item
     {
         [Key]
         public int Id { get; set; }

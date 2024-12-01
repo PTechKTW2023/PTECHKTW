@@ -17,6 +17,6 @@ namespace Booker.Data
         [ForeignKey("School")]
         public  string School { get; set; }
         public string? Photo {  get; set; }
-
+        public ICollection<Item> Items { get; set; }
     }
 }
