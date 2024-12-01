@@ -6,11 +6,14 @@ namespace Booker.Data
     {
         [Key]
         public int Id { get; set; }
-       
-        public required string Title { get; set; }
+        [Required]
+        public string Title { get; set; }
         //Should it be string or char for now?
-        public required char[] Grade { get; set; }
-        public required string Subject { get; set; }
-        public required bool Level { get; set; }
+        [Required]
+        public char[] Grade { get; set; }
+        [Required]
+        public string Subject { get; set; }
+        [Required]
+        public bool Level { get; set; }
     }
 }

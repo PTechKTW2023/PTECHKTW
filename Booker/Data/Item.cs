@@ -8,12 +8,18 @@ namespace Booker.Data
     {
         [Key]
         public int Id { get; set; }
+        [ForeignKey("BookId")]
         public int BookId { get; set; }
+        [ForeignKey("UserId")]
         public int UserID { get; set; }
         public decimal Price { get; set; }
         public DateTime DateTime { get; set; }
-        public required string Description { get; set; }
-        public required string State { get; set; }
-        public required string Photo {  get; set; }
+
+        [Required]
+        public string Description { get; set; }
+        [Required]
+        public string State { get; set; }
+        [Required]
+        public string Photo {  get; set; }
     }
 }
