@@ -12,6 +12,9 @@ namespace Booker.Data
         {
 
         }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            
+        }
     }
 }
