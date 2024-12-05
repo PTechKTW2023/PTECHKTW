@@ -7,11 +7,9 @@ namespace Booker.Data
     public class Item
     {
         public int Id { get; set; }
-        public int BookId { get; set; }
-        [ForeignKey("BookId")]
+        public int BookId { get; set; }        
         public Book Book { get; set; }
-        public int UserID { get; set; }
-        [ForeignKey("UserId")]
+        public int UserID { get; set; }        
         public User User { get; set; }
         public decimal Price { get; set; }
         public DateTime DateTime { get; set; }

@@ -5,7 +5,8 @@ namespace Booker.Data
 {
     public class User
     {
-        public int UserId { get; set; }
+        
+        public int Id { get; set; }
         [Required]
         public string Email { get; set; }
         public string Password { get; set; }

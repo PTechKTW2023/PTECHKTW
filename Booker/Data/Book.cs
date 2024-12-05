@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Booker.Data
 {
     public class Book
-    {
-        public int BookId { get; set; }
+    {         
+        public int Id { get; set; }
         [Required]
         public string Title { get; set; }
         //Should it be string or char for now?

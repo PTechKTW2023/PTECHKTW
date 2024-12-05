@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booker.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241202162734_AddBookUserItem")]
-    partial class AddBookUserItem
+    [Migration("20241205200814_InitilMigration")]
+    partial class InitilMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,6 +87,8 @@ namespace Booker.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BookId");
+
                     b.HasIndex("UserID");
 
                     b.ToTable("Items");
@@ -126,11 +128,26 @@ namespace Booker.Migrations
 
             modelBuilder.Entity("Booker.Data.Item", b =>
                 {
-                    b.HasOne("Booker.Data.User", null)
+                    b.HasOne("Booker.Data.Book", "Book")
+                        .WithMany("Items")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Booker.Data.User", "User")
                         .WithMany("Items")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Booker.Data.Book", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("Booker.Data.User", b =>
