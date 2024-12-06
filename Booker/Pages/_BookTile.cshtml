@@ -1,4 +1,4 @@
-﻿@model Booker.Models.Item
+﻿@model Booker.Data.Item
 
 
 <article class="book-tile">
@@ -11,11 +11,11 @@
             <p>@Model.Price zł</p>
             <p><small>ŚlTZN</small></p>
             <button class="outline">@Model.Book.Subject</button>
-            <button class="outline">@Model.Book.GradeFullName()</button>
-            @if (Model.Book.Level is not null)
-            {
-                <button class="outline">@Model.Book.LevelFullName()</button>
-            }
+            <button class="outline">@Model.Book.Grade</button>
+            @*if (Model.Book.Level is not null)
+            {*@
+                <button class="outline">@Model.Book.Level</button>
+            @*}*@
             <button class="outline fav" aria-label="Dodaj do ulubionych" title="Dodaj do ulubionych">
                 <svg><use href="img/icons.svg#si-awesome-star-o" /></svg>
             </button>
