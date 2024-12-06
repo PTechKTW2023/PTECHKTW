@@ -9,7 +9,7 @@
         </a>
         <div class="flow-root">
             <p>@Model.Price zł</p>
-            <p><small>ŚlTZN</small></p>
+            <p><small>@Model.User.School</small></p>
             <button class="outline">@Model.Book.Subject</button>
             <button class="outline">@Model.Book.Grade</button>
             @*if (Model.Book.Level is not null)

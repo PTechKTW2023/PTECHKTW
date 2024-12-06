@@ -25,11 +25,20 @@ public class IndexModel : PageModel
             Level = false
         };
 
+        var user = new Booker.Data.User
+        {
+            Id = 1,
+            Nickname = "Franx",
+            School = "ŚlTZN"
+        };
+
         var item = new Booker.Data.Item
         {
             Id = 1,
             BookId = book.Id,
             Book = book,
+            UserID = user.Id,
+            User = user,
             DateTime = DateTime.Today,
             Price = 21.37M,
             Description = "Lorem ipsum",
