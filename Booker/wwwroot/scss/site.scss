@@ -33,7 +33,35 @@
     gap: 1rem;
 }
 
-a:has(article) { // card link, this code is needed because of pico
+.book-tile {
+    position: relative;
+    #{pico.$css-var-prefix}typography-spacing-vertical: 0.25em;
+
+    button {
+        position: relative;
+        z-index: 10;
+        font-size: 0.75em;
+        padding: 0 0.5em;
+        border-radius: 100vmax;
+    }
+
+    button.fav {
+        position: absolute;
+        border: none;
+        width: 3em;
+        height: 3em;
+        
+        right: 0.25em;
+        bottom: 0.25em;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.book-tile a { // card link, this code is needed because of pico
     #{pico.$css-var-prefix}color: unset;
     #{pico.$css-var-prefix}background-color: unset;
     #{pico.$css-var-prefix}underline: unset;
@@ -43,6 +71,15 @@ a:has(article) { // card link, this code is needed because of pico
         #{pico.$css-var-prefix}color: unset;
         #{pico.$css-var-prefix}underline: unset;
         #{pico.$css-var-prefix}text-decoration: underline;
+    }
+
+    &::after {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
 }
 

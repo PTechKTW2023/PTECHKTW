@@ -2783,16 +2783,48 @@ textarea,
   gap: 1rem;
 }
 
-a:has(article) {
+.book-tile {
+  position: relative;
+  --pico-typography-spacing-vertical: 0.25em;
+}
+.book-tile button {
+  position: relative;
+  z-index: 10;
+  font-size: 0.75em;
+  padding: 0 0.5em;
+  border-radius: 100vmax;
+}
+.book-tile button.fav {
+  position: absolute;
+  border: none;
+  width: 3em;
+  height: 3em;
+  right: 0.25em;
+  bottom: 0.25em;
+}
+.book-tile button.fav svg {
+  width: 100%;
+  height: 100%;
+}
+
+.book-tile a {
   --pico-color: unset;
   --pico-background-color: unset;
   --pico-underline: unset;
   --pico-text-decoration: unset;
 }
-a:has(article):is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+.book-tile a:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: unset;
   --pico-underline: unset;
   --pico-text-decoration: underline;
+}
+.book-tile a::after {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .book-display .image {
