@@ -16,6 +16,7 @@ public class IndexModel : PageModel
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
+        // TODO: remove this sample data and get real data from database (#13)
         var book = new Booker.Data.Book
         {
             Id = 1,
