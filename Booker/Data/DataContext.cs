@@ -74,6 +74,10 @@ namespace Booker.Data
                 new Book { Id = GetNextId(idGenerator), Title = "Fizyka 2 [wsip]", Grade = "2", Subject = "Fizyka", Level = false },
                 new Book { Id = GetNextId(idGenerator), Title = "Fizyka 3 [wsip]", Grade = "3", Subject = "Fizyka", Level = false },
                 new Book { Id = GetNextId(idGenerator), Title = "Fizyka 4 [wsip]", Grade = "4/5", Subject = "Fizyka", Level = false },
+                new Book { Id = GetNextId(idGenerator), Title = "Fizyka 1 [wsip]", Grade = "1", Subject = "Fizyka", Level = true },
+                new Book { Id = GetNextId(idGenerator), Title = "Fizyka 2 [wsip]", Grade = "2", Subject = "Fizyka", Level = true },
+                new Book { Id = GetNextId(idGenerator), Title = "Fizyka 3 [wsip]", Grade = "3", Subject = "Fizyka", Level = true },
+                new Book { Id = GetNextId(idGenerator), Title = "Fizyka 4 [wsip]", Grade = "4/5", Subject = "Fizyka", Level = true },
 
                 // Geografia
                 new Book { Id = GetNextId(idGenerator), Title = "Oblicza geografii 1", Grade = "1/2", Subject = "Geografia", Level = true },
