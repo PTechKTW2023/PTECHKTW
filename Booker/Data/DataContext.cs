@@ -140,7 +140,7 @@ namespace Booker.Data
                 new User { Id = GetNextId(userIdGenerator), Email = "user"+GetNextId(userIdGenerator)+"@gmail.com", Password = "zaq1@WSX", Nickname = "user"+GetNextId(userIdGenerator), School = "Śl.TZN", Photo = "photo"+GetNextId(userIdGenerator)}
               );
             modelBuilder.Entity<Item>().HasData(
-                new Item { Id = GetNextId(itemIdGenerator), BookId = 1, UserID = 1, Price = 20.50, DateTime = DateTime.Now, Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", State = "bardzo dobry", Photo = "1"}
+                new Item { Id = GetNextId(itemIdGenerator), BookId = 1, UserID = 1, Price = 20.50M, DateTime = DateTime.Now, Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", State = "bardzo dobry", Photo = "1"}
               );
         }
 

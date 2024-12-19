@@ -11,7 +11,7 @@ namespace Booker.Data
         public Book Book { get; set; }
         public int UserID { get; set; }        
         public User User { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public DateTime DateTime { get; set; }
         [Required]
         public string Description { get; set; }
