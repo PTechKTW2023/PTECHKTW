@@ -34,7 +34,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-// Add this block
 if (app.Environment.IsDevelopment())
 {
     app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> endpointSources) =>

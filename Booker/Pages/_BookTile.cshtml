@@ -1,25 +1,41 @@
 ﻿@model Booker.Data.Item
 
-@{
-    // TODO: uncomment the nullcheck when model is adjusted for nullability
-    // TODO: create displayname functions for level and grade
+@functions {
+    private string DisplayLevel(bool? level)
+    {
+        if (level == null)
+            return "Nieznany poziom";
+        return level.Value ? "Podstawa" : "Rozszerzenie";
+    }
+
+    private string DisplayGrade(string grade)
+    {
+        if (string.IsNullOrEmpty(grade))
+            return "Nieznana klasa";
+
+        if (grade == "Zależnie od poziomu")
+            return grade;
+
+        return $"Klasa {grade}";
+    }
 }
 
 <article class="book-tile">
-    <img src="@Model.Photo" />
+    <img src="@Model.Photo" alt="Zdjęcie książki: @Model.Book.Title" />
     <footer>
-        <a asp-page="/Book">
+        <a asp-page="/Book" asp-route-id="@Model.Id">
             <h3>@Model.Book.Title</h3>
         </a>
         <div class="flow-root">
             <p>@Model.Price zł</p>
-            <p><small>@Model.User.School</small></p>
-            <button class="outline">@Model.Book.Subject</button>
-            <button class="outline">@Model.Book.Grade</button>
-            @*if (Model.Book.Level is not null)
-            {*@
-                <button class="outline">@Model.Book.Level</button>
-            @*}*@
+            <p><small>@(string.IsNullOrWhiteSpace(Model.User?.School) ? "Nieznana szkoła" : Model.User.School)</small></p>
+            <button class="outline">@(string.IsNullOrWhiteSpace(Model.Book?.Subject) ? "Nieznany przedmiot" : Model.Book.Subject)</button>
+
+            <button class="outline">@DisplayGrade(Model.Book.Grade)</button>
+            @if (Model.Book.Level != null)
+            {
+                <button class="outline">@DisplayLevel(Model.Book.Level)</button>
+            }
             <button class="outline fav" aria-label="Dodaj do ulubionych" title="Dodaj do ulubionych">
                 <svg><use href="img/icons.svg#si-awesome-star-o" /></svg>
             </button>
