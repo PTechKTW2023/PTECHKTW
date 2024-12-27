@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.EntityFrameworkCore;
 using Booker.Data;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +24,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-
+var cultureInfo = new CultureInfo("pl-PL");
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

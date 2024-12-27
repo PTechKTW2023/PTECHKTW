@@ -28,16 +28,23 @@
         </a>
         <div class="flow-root">
             <p>@Model.Price zł</p>
-            <p><small>@(string.IsNullOrWhiteSpace(Model.User?.School) ? "Nieznana szkoła" : Model.User.School)</small></p>
-            <button class="outline">@(string.IsNullOrWhiteSpace(Model.Book?.Subject) ? "Nieznany przedmiot" : Model.Book.Subject)</button>
-
+            <p>
+                <small>
+                    @(string.IsNullOrWhiteSpace(Model.User?.School) ? "Nieznana szkoła" : Model.User.School)
+                </small>
+            </p>
+            <button class="outline">
+                @(string.IsNullOrWhiteSpace(Model.Book?.Subject) ? "Nieznany przedmiot" : Model.Book.Subject)
+            </button>
             <button class="outline">@DisplayGrade(Model.Book.Grade)</button>
             @if (Model.Book.Level != null)
             {
                 <button class="outline">@DisplayLevel(Model.Book.Level)</button>
             }
             <button class="outline fav" aria-label="Dodaj do ulubionych" title="Dodaj do ulubionych">
-                <svg><use href="img/icons.svg#si-awesome-star-o" /></svg>
+                <svg>
+                    <use href="img/icons.svg#si-awesome-star-o" />
+                </svg>
             </button>
         </div>
     </footer>

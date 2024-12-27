@@ -2,6 +2,7 @@ using Booker.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace Booker.Pages
 {
@@ -29,6 +30,22 @@ namespace Booker.Pages
             }
 
             return Page();
+        }
+
+        public static string FormatDateWithSpecialCases(DateTime? dateTime)
+        {
+            if (!dateTime.HasValue)
+                return "Brak daty";
+
+            var now = DateTime.Now;
+            var date = dateTime.Value;
+
+            if (date.Date == now.Date)
+                return $"dzisiaj o {date:HH:mm}";
+            if (date.Date == now.Date.AddDays(-1))
+                return $"wczoraj o {date:HH:mm}";
+
+            return date.ToString("d MMMM yyyy 'o' HH:mm", new CultureInfo("pl-PL"));
         }
     }
 }
