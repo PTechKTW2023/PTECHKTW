@@ -30,9 +30,60 @@
     </div>
 </section>
 
-<section class="grid-gallery">
+<section class="grid-gallery" id="book-container">
     @foreach (var item in Model.ItemsList.Items)
     {
-        @await Html.PartialAsync("_BookTile",item)
+        @await Html.PartialAsync("_BookTile", item)
     }
 </section>
+
+<div id="loader" style="text-align:center; padding:10px; display:none;">
+    <p>Ładowanie...</p>
+</div>
+
+@section Scripts {
+    <script>
+        let page = @Model.ItemsList.Page + 1;
+        let loading = false;
+
+        const bookContainer = document.getElementById('book-container');
+        const loader = document.getElementById('loader');
+
+        const loadMoreBooks = async () => {
+            if (loading) return;
+
+            loading = true;
+            loader.style.display = 'block';
+
+            try {
+                const response = await fetch(`?handler=More&page=${page}`);
+                if (!response.ok) {
+                    throw new Error('Błąd podczas ładowania danych.');
+                }
+
+                const items = await response.text();
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = items;
+
+                while (tempDiv.firstChild) {
+                    bookContainer.appendChild(tempDiv.firstChild);
+                }
+
+                page++;
+            } catch (error) {
+                console.error(error);
+            } finally {
+                loading = false;
+                loader.style.display = 'none';
+            }
+        };
+
+        const onScroll = () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                loadMoreBooks();
+            }
+        };
+
+        window.addEventListener('scroll', onScroll);
+    </script>
+}
