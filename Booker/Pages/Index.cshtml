@@ -31,8 +31,9 @@
 </section>
 
 <section class="grid-gallery">
-    @foreach (var item in Model.ItemsList.Items)
-    {
-        @await Html.PartialAsync("_BookTile",item)
-    }
+    @await Html.PartialAsync("_ItemGallery", Model.ItemsList)
+</section>
+
+<section>
+    <div aria-busy="true" class="htmx-indicator" id="ind"></div>
 </section>

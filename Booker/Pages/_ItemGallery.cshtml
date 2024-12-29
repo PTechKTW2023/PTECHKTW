@@ -1,0 +1,14 @@
+﻿@model Booker.Pages.IndexModel.PagedListViewModel
+
+@foreach (var item in Model.Items)
+{
+    @await Html.PartialAsync("_BookTile", item)
+    @if (item == Model.Items.Last())
+    {
+        <div hx-get="@Url.Page("Index","More",new { pageNumber = Model.Page + 1 })"
+             hx-trigger="revealed"
+             hx-swap="outerHTML"
+             hx-indicator="#ind">
+        </div>
+    }
+}
