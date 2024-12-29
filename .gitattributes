@@ -1,4 +1,4 @@
 # Exclude external deps from language statistics
 
-wwwroot/lib/** linguist-vendored
-wwwroot/js/htmx* linguist-vendored
+Booker/wwwroot/lib/** linguist-vendored
+Booker/wwwroot/js/htmx* linguist-vendored
