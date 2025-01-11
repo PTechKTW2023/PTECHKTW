@@ -20,7 +20,7 @@ namespace Booker.Pages
         public async Task<IActionResult> OnGetAsync(int id)
         {
             BookItem = await _context.Items
-                .Include(i => i.Book)
+                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
                 .Include(i => i.User)
                 .FirstOrDefaultAsync(i => i.Id == id);
 

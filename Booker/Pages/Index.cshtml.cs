@@ -25,7 +25,7 @@ namespace Booker.Pages
             const int PageSize = 25;
 
             var items = await _context.Items
-                .Include(i => i.Book)
+                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
                 .Include(i => i.User)
                 .OrderBy(i => i.DateTime)
                 .Skip(page * PageSize)
