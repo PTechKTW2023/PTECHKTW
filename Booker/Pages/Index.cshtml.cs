@@ -9,6 +9,7 @@ namespace Booker.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly DataContext _context;
+        const int PageSize = 25;
 
         public record PagedListViewModel(List<Booker.Data.Item> Items, int Page);
 
@@ -20,21 +21,40 @@ namespace Booker.Pages
             _context = context;
         }
 
-        public async Task<IActionResult> OnGetAsync(int page = 0)
+        public async Task<IActionResult> OnGetAsync(int pageNumber = 0)
         {
-            const int PageSize = 25;
+            var items = await _context.Items
+                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
+                .Include(i => i.User)
+                .OrderBy(i => i.DateTime)
+                .Skip(pageNumber * PageSize)
+                .Take(PageSize)
+                .ToListAsync();
+
+            ItemsList = new PagedListViewModel(items, pageNumber);
+
+            return Page();
+        }
+
+        public async Task<IActionResult> OnGetMoreAsync(int pageNumber)
+        {
+            int index = pageNumber * PageSize;
+            if (index >= await _context.Items.CountAsync())
+            {
+                return new NoContentResult();
+            }
 
             var items = await _context.Items
                 .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
                 .Include(i => i.User)
                 .OrderBy(i => i.DateTime)
-                .Skip(page * PageSize)
+                .Skip(index)
                 .Take(PageSize)
                 .ToListAsync();
 
-            ItemsList = new PagedListViewModel(items, page);
+            ItemsList = new PagedListViewModel(items, pageNumber);
 
-            return Page();
+            return Partial("_ItemGallery", ItemsList);
         }
     }
 }
