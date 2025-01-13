@@ -5,6 +5,9 @@ using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Register IMemoryCache in DI container
+builder.Services.AddMemoryCache();
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 
