@@ -23,7 +23,7 @@
         <ul>
             <li>
                 Klasa:
-                @(Model.BookItem?.Book?.Grade != null ? Model.BookItem.Book.Grade : "nieznana")
+                @(Model.BookItem?.Book?.BookGrades?.FirstOrDefault()?.Grade?.GradeNumber ?? "nieznana")
             </li>
             <li>Przedmiot: @(Model.BookItem?.Book?.Subject ?? "Nieznany przedmiot")</li>
             <li>

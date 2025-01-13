@@ -24,7 +24,7 @@ namespace Booker.Pages
         public async Task<IActionResult> OnGetAsync(int pageNumber = 0)
         {
             var items = await _context.Items
-                .Include(i => i.Book)
+                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
                 .Include(i => i.User)
                 .OrderBy(i => i.DateTime)
                 .Skip(pageNumber * PageSize)
@@ -45,7 +45,7 @@ namespace Booker.Pages
             }
 
             var items = await _context.Items
-                .Include(i => i.Book)
+                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
                 .Include(i => i.User)
                 .OrderBy(i => i.DateTime)
                 .Skip(index)

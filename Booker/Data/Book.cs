@@ -8,9 +8,7 @@ namespace Booker.Data
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }
-        //Should it be string or char for now?
-        [Required]
-        public string Grade { get; set; }
+        public ICollection<BookGrade> BookGrades { get; set; }
         [Required]
         public string Subject { get; set; }
         [Required]

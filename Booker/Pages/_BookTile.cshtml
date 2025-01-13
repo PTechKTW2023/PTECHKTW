@@ -36,7 +36,7 @@
             <button class="outline">
                 @(string.IsNullOrWhiteSpace(Model.Book?.Subject) ? "Nieznany przedmiot" : Model.Book.Subject)
             </button>
-            <button class="outline">@DisplayGrade(Model.Book.Grade)</button>
+            <button class="outline">@DisplayGrade(Model.Book.BookGrades?.FirstOrDefault()?.Grade?.GradeNumber)</button>
             @if (Model.Book.Level != null)
             {
                 <button class="outline">@DisplayLevel(Model.Book.Level)</button>
