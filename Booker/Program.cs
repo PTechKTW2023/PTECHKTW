@@ -2,6 +2,7 @@ using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.EntityFrameworkCore;
 using Booker.Data;
 using System.Globalization;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,9 @@ builder.Services.AddDbContext<DataContext>(options =>
     //options.UseInMemoryDatabase("InMemoryDatabaseName");
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<DataContext>();
 
 var app = builder.Build();
 
@@ -36,6 +40,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
