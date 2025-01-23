@@ -54,7 +54,7 @@
             <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                  alt="Profil sprzedającego" />
             <div>
-                @(Model.BookItem?.User?.Nickname ?? "Nieznany użytkownik")<br />
+                @(Model.BookItem?.User?.UserName ?? "Nieznany użytkownik")<br />
                 @(Model.BookItem?.User?.School ?? "Nieznana szkoła")<br />
                 <a href="#" role="button" class="outline">Więcej od tego użytkownika</a>
             </div>
