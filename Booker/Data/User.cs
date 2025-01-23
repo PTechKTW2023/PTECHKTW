@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Booker.Data
 {
-    public class User : IdentityUser
+    public class User : IdentityUser<int>
     {
         [Required]
         public string School { get; set; }
