@@ -143,127 +143,127 @@ namespace Booker.Data
             );
 
             modelBuilder.Entity<Grade>().HasData(
-                new Grade { Id = "1", GradeNumber = "1" },
-                new Grade { Id = "2", GradeNumber = "2" },
-                new Grade { Id = "3", GradeNumber = "3" },
-                new Grade { Id = "4", GradeNumber = "4" },
-                new Grade { Id = "5", GradeNumber = "5" }
+                new Grade { Id = 1, GradeNumber = "1" },
+                new Grade { Id = 2, GradeNumber = "2" },
+                new Grade { Id = 3, GradeNumber = "3" },
+                new Grade { Id = 4, GradeNumber = "4" },
+                new Grade { Id = 5, GradeNumber = "5" }
             );
 
             modelBuilder.Entity<BookGrade>().HasKey(bg => new { bg.BookId, bg.GradeId });
 
             modelBuilder.Entity<BookGrade>().HasData(
                 // Polish books
-                new BookGrade { BookId = 1, GradeId = "1" },
-                new BookGrade { BookId = 2, GradeId = "1" },
-                new BookGrade { BookId = 3, GradeId = "2" },
-                new BookGrade { BookId = 4, GradeId = "2" },
-                new BookGrade { BookId = 5, GradeId = "3" },
-                new BookGrade { BookId = 6, GradeId = "4" },
-                new BookGrade { BookId = 7, GradeId = "5" },
+                new BookGrade { BookId = 1, GradeId = 1 },
+                new BookGrade { BookId = 2, GradeId = 1 },
+                new BookGrade { BookId = 3, GradeId = 2 },
+                new BookGrade { BookId = 4, GradeId = 2 },
+                new BookGrade { BookId = 5, GradeId = 3 },
+                new BookGrade { BookId = 6, GradeId = 4 },
+                new BookGrade { BookId = 7, GradeId = 5 },
 
                 // English books
-                new BookGrade { BookId = 8, GradeId = "1" },
-                new BookGrade { BookId = 9, GradeId = "1" },
-                new BookGrade { BookId = 10, GradeId = "2" },
-                new BookGrade { BookId = 11, GradeId = "2" },
-                new BookGrade { BookId = 12, GradeId = "3" },
-                new BookGrade { BookId = 13, GradeId = "3" },
-                new BookGrade { BookId = 14, GradeId = "4" },
-                new BookGrade { BookId = 15, GradeId = "4" },
-                new BookGrade { BookId = 16, GradeId = "5" },
-                new BookGrade { BookId = 17, GradeId = "5" },
-                new BookGrade { BookId = 18, GradeId = "5" },
-                new BookGrade { BookId = 19, GradeId = "5" },
+                new BookGrade { BookId = 8, GradeId = 1 },
+                new BookGrade { BookId = 9, GradeId = 1 },
+                new BookGrade { BookId = 10, GradeId = 2 },
+                new BookGrade { BookId = 11, GradeId = 2 },
+                new BookGrade { BookId = 12, GradeId = 3 },
+                new BookGrade { BookId = 13, GradeId = 3 },
+                new BookGrade { BookId = 14, GradeId = 4 },
+                new BookGrade { BookId = 15, GradeId = 4 },
+                new BookGrade { BookId = 16, GradeId = 5 },
+                new BookGrade { BookId = 17, GradeId = 5 },
+                new BookGrade { BookId = 18, GradeId = 5 },
+                new BookGrade { BookId = 19, GradeId = 5 },
 
                 // German books
-                new BookGrade { BookId = 20, GradeId = "1" },
-                new BookGrade { BookId = 21, GradeId = "2" },
-                new BookGrade { BookId = 22, GradeId = "3" },
-                new BookGrade { BookId = 23, GradeId = "4" },
-                new BookGrade { BookId = 24, GradeId = "1" },
-                new BookGrade { BookId = 25, GradeId = "2" },
-                new BookGrade { BookId = 26, GradeId = "3" },
-                new BookGrade { BookId = 27, GradeId = "4" },
+                new BookGrade { BookId = 20, GradeId = 1 },
+                new BookGrade { BookId = 21, GradeId = 2 },
+                new BookGrade { BookId = 22, GradeId = 3 },
+                new BookGrade { BookId = 23, GradeId = 4 },
+                new BookGrade { BookId = 24, GradeId = 1 },
+                new BookGrade { BookId = 25, GradeId = 2 },
+                new BookGrade { BookId = 26, GradeId = 3 },
+                new BookGrade { BookId = 27, GradeId = 4 },
 
                 // Biology books
-                new BookGrade { BookId = 28, GradeId = "1" },
-                new BookGrade { BookId = 29, GradeId = "2" },
-                new BookGrade { BookId = 30, GradeId = "3" },
-                new BookGrade { BookId = 31, GradeId = "1" },
-                new BookGrade { BookId = 32, GradeId = "2" },
-                new BookGrade { BookId = 33, GradeId = "3" },
+                new BookGrade { BookId = 28, GradeId = 1 },
+                new BookGrade { BookId = 29, GradeId = 2 },
+                new BookGrade { BookId = 30, GradeId = 3 },
+                new BookGrade { BookId = 31, GradeId = 1 },
+                new BookGrade { BookId = 32, GradeId = 2 },
+                new BookGrade { BookId = 33, GradeId = 3 },
 
                 // Chemistry books
-                new BookGrade { BookId = 34, GradeId = "1" },
-                new BookGrade { BookId = 35, GradeId = "2" },
-                new BookGrade { BookId = 36, GradeId = "3" },
-                new BookGrade { BookId = 37, GradeId = "4" },
+                new BookGrade { BookId = 34, GradeId = 1 },
+                new BookGrade { BookId = 35, GradeId = 2 },
+                new BookGrade { BookId = 36, GradeId = 3 },
+                new BookGrade { BookId = 37, GradeId = 4 },
 
                 // EDB books
-                new BookGrade { BookId = 38, GradeId = "1" },
+                new BookGrade { BookId = 38, GradeId = 1 },
 
                 // Physics books
-                new BookGrade { BookId = 39, GradeId = "1" },
-                new BookGrade { BookId = 40, GradeId = "2" },
-                new BookGrade { BookId = 41, GradeId = "3" },
-                new BookGrade { BookId = 42, GradeId = "4" },
-                new BookGrade { BookId = 43, GradeId = "1" },
-                new BookGrade { BookId = 44, GradeId = "2" },
-                new BookGrade { BookId = 45, GradeId = "3" },
-                new BookGrade { BookId = 46, GradeId = "4" },
+                new BookGrade { BookId = 39, GradeId = 1 },
+                new BookGrade { BookId = 40, GradeId = 2 },
+                new BookGrade { BookId = 41, GradeId = 3 },
+                new BookGrade { BookId = 42, GradeId = 4 },
+                new BookGrade { BookId = 43, GradeId = 1 },
+                new BookGrade { BookId = 44, GradeId = 2 },
+                new BookGrade { BookId = 45, GradeId = 3 },
+                new BookGrade { BookId = 46, GradeId = 4 },
 
                 // Geography books
-                new BookGrade { BookId = 47, GradeId = "1" },
-                new BookGrade { BookId = 48, GradeId = "2" },
-                new BookGrade { BookId = 49, GradeId = "1" },
-                new BookGrade { BookId = 50, GradeId = "2" },
+                new BookGrade { BookId = 47, GradeId = 1 },
+                new BookGrade { BookId = 48, GradeId = 2 },
+                new BookGrade { BookId = 49, GradeId = 1 },
+                new BookGrade { BookId = 50, GradeId = 2 },
 
                 // History books
-                new BookGrade { BookId = 51, GradeId = "1" },
-                new BookGrade { BookId = 52, GradeId = "2" },
-                new BookGrade { BookId = 53, GradeId = "3" },
-                new BookGrade { BookId = 54, GradeId = "4" },
+                new BookGrade { BookId = 51, GradeId = 1 },
+                new BookGrade { BookId = 52, GradeId = 2 },
+                new BookGrade { BookId = 53, GradeId = 3 },
+                new BookGrade { BookId = 54, GradeId = 4 },
 
                 // HiT books
-                new BookGrade { BookId = 55, GradeId = "2" },
-                new BookGrade { BookId = 56, GradeId = "3" },
+                new BookGrade { BookId = 55, GradeId = 2 },
+                new BookGrade { BookId = 56, GradeId = 3 },
 
                 // Informatics books
-                new BookGrade { BookId = 57, GradeId = "1" },
-                new BookGrade { BookId = 58, GradeId = "2" },
-                new BookGrade { BookId = 59, GradeId = "3" },
-                new BookGrade { BookId = 60, GradeId = "4" },
+                new BookGrade { BookId = 57, GradeId = 1 },
+                new BookGrade { BookId = 58, GradeId = 2 },
+                new BookGrade { BookId = 59, GradeId = 3 },
+                new BookGrade { BookId = 60, GradeId = 4 },
 
                 // Mathematics books
-                new BookGrade { BookId = 61, GradeId = "1" },
-                new BookGrade { BookId = 62, GradeId = "2" },
-                new BookGrade { BookId = 63, GradeId = "3" },
-                new BookGrade { BookId = 64, GradeId = "4" },
-                new BookGrade { BookId = 65, GradeId = "1" },
-                new BookGrade { BookId = 66, GradeId = "2" },
-                new BookGrade { BookId = 67, GradeId = "3" },
-                new BookGrade { BookId = 68, GradeId = "4" },
+                new BookGrade { BookId = 61, GradeId = 1 },
+                new BookGrade { BookId = 62, GradeId = 2 },
+                new BookGrade { BookId = 63, GradeId = 3 },
+                new BookGrade { BookId = 64, GradeId = 4 },
+                new BookGrade { BookId = 65, GradeId = 1 },
+                new BookGrade { BookId = 66, GradeId = 2 },
+                new BookGrade { BookId = 67, GradeId = 3 },
+                new BookGrade { BookId = 68, GradeId = 4 },
 
                 // Entrepreneurship books
-                new BookGrade { BookId = 69, GradeId = "2" },
+                new BookGrade { BookId = 69, GradeId = 2 },
 
                 // Business and management books
-                new BookGrade { BookId = 70, GradeId = "1" },
-                new BookGrade { BookId = 71, GradeId = "2" },
+                new BookGrade { BookId = 70, GradeId = 1 },
+                new BookGrade { BookId = 71, GradeId = 2 },
 
                 // Art books
-                new BookGrade { BookId = 72, GradeId = "1" },
+                new BookGrade { BookId = 72, GradeId = 1 },
 
                 // Social studies books
-                new BookGrade { BookId = 73, GradeId = "4" },
-                new BookGrade { BookId = 74, GradeId = "5" },
+                new BookGrade { BookId = 73, GradeId = 4 },
+                new BookGrade { BookId = 74, GradeId = 5 },
 
                 // Vocational English books
-                new BookGrade { BookId = 75, GradeId = "3" },
-                new BookGrade { BookId = 76, GradeId = "3" },
-                new BookGrade { BookId = 77, GradeId = "3" },
-                new BookGrade { BookId = 78, GradeId = "3" }
+                new BookGrade { BookId = 75, GradeId = 3 },
+                new BookGrade { BookId = 76, GradeId = 3 },
+                new BookGrade { BookId = 77, GradeId = 3 },
+                new BookGrade { BookId = 78, GradeId = 3 }
                 //new BookGrade { BookId = 79, GradeId = "3" }
                 //new BookGrade { BookId = 80, GradeId = "3" }
             );

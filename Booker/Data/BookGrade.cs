@@ -5,7 +5,7 @@
         public int BookId { get; set; }
         public Book Book { get; set; }
 
-        public string GradeId { get; set; }
+        public int GradeId { get; set; }
         public Grade Grade { get; set; }
     }
 }
