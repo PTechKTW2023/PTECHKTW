@@ -61,6 +61,36 @@ namespace Booker.Pages
             return Page();
         }
 
+        public async Task<IActionResult> OnGetMoreAsync(int pageNumber, string? search = null, string? grade = null, string? subject = null, decimal? minPrice = null, decimal? maxPrice = null, string? level = null)
+        {
+            Search = search;
+            Grade = grade;
+            Subject = subject;
+            MinPrice = minPrice;
+            MaxPrice = maxPrice;
+            Level = level;
+
+            var query = _context.Items
+                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
+                .Include(i => i.User)
+                .AsQueryable();
+
+            query = ApplyFilters(query, search, grade, subject, minPrice, maxPrice, level);
+
+            var totalItems = await query.CountAsync();
+            bool hasMorePages = totalItems > (pageNumber + 1) * PageSize;
+
+            var items = await query
+                .OrderBy(i => i.DateTime)
+                .Skip(pageNumber * PageSize)
+                .Take(PageSize)
+                .ToListAsync();
+
+            var pagedListViewModel = new PagedListViewModel(items, pageNumber, hasMorePages);
+
+            return Partial("_ItemGallery", pagedListViewModel);
+        }
+
         private IQueryable<Item> ApplyFilters(IQueryable<Item> query, string? search, string? grade, string? subject, decimal? minPrice, decimal? maxPrice, string? level)
         {
             if (!string.IsNullOrWhiteSpace(search))

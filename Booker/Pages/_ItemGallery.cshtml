@@ -8,7 +8,8 @@
         <div hx-get="@Url.Page("Index", "More", new { pageNumber = Model.Page + 1 })"
              hx-trigger="revealed"
              hx-swap="outerHTML"
-             hx-indicator="#ind">
+             hx-indicator="#ind"
+             hx-include="[name='search'], [name='grade'], [name='subject'], [name='minPrice'], [name='maxPrice'], [name='level']">
         </div>
     }
 }
