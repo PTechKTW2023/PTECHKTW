@@ -11,9 +11,15 @@ namespace Booker.Pages
         private readonly DataContext _context;
         const int PageSize = 25;
 
-        public record PagedListViewModel(List<Booker.Data.Item> Items, int Page);
+        public record PagedListViewModel(List<Item> Items, int Page, bool HasMorePages);
 
         public PagedListViewModel? ItemsList { get; set; }
+        public string? Search { get; set; }
+        public string? Grade { get; set; }
+        public string? Subject { get; set; }
+        public decimal? MinPrice { get; set; }
+        public decimal? MaxPrice { get; set; }
+        public string? Level { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, DataContext context)
         {
@@ -21,40 +27,76 @@ namespace Booker.Pages
             _context = context;
         }
 
-        public async Task<IActionResult> OnGetAsync(int pageNumber = 0)
+        public async Task<IActionResult> OnGetAsync(int pageNumber = 0, string? search = null, string? grade = null, string? subject = null, decimal? minPrice = null, decimal? maxPrice = null, string? level = null)
         {
-            var items = await _context.Items
+            Search = search;
+            Grade = grade;
+            Subject = subject;
+            MinPrice = minPrice;
+            MaxPrice = maxPrice;
+            Level = level;
+
+            var query = _context.Items
                 .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
                 .Include(i => i.User)
+                .AsQueryable();
+
+            query = ApplyFilters(query, search, grade, subject, minPrice, maxPrice, level);
+
+            var totalItems = await query.CountAsync();
+            bool hasMorePages = totalItems > (pageNumber + 1) * PageSize;
+
+            var items = await query
                 .OrderBy(i => i.DateTime)
                 .Skip(pageNumber * PageSize)
                 .Take(PageSize)
                 .ToListAsync();
 
-            ItemsList = new PagedListViewModel(items, pageNumber);
+            ItemsList = new PagedListViewModel(items, pageNumber, hasMorePages);
 
+            if (Request.Headers["HX-Request"] == "true")
+            {
+                return Partial("_ItemGallery", ItemsList);
+            }
             return Page();
         }
 
-        public async Task<IActionResult> OnGetMoreAsync(int pageNumber)
+        private IQueryable<Item> ApplyFilters(IQueryable<Item> query, string? search, string? grade, string? subject, decimal? minPrice, decimal? maxPrice, string? level)
         {
-            int index = pageNumber * PageSize;
-            if (index >= await _context.Items.CountAsync())
+            if (!string.IsNullOrWhiteSpace(search))
             {
-                return new NoContentResult();
+                string lowerSearch = search.ToLower();
+                query = query.Where(i => EF.Functions.Like(i.Book.Title.ToLower(), $"%{lowerSearch}%"));
             }
 
-            var items = await _context.Items
-                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
-                .Include(i => i.User)
-                .OrderBy(i => i.DateTime)
-                .Skip(index)
-                .Take(PageSize)
-                .ToListAsync();
+            if (!string.IsNullOrWhiteSpace(grade) && grade != "Wszystkie klasy")
+            {
+                string parsedGrade = grade.Replace("Klasa ", "").TrimEnd('.').Trim();
+                query = query.Where(i => i.Book.BookGrades.Any(bg => bg.Grade.GradeNumber.Contains(parsedGrade)));
+            }
 
-            ItemsList = new PagedListViewModel(items, pageNumber);
+            if (!string.IsNullOrWhiteSpace(subject) && subject != "Wszystkie przedmioty")
+            {
+                query = query.Where(i => i.Book.Subject == subject);
+            }
 
-            return Partial("_ItemGallery", ItemsList);
+            if (minPrice.HasValue)
+            {
+                query = query.Where(i => i.Price >= minPrice.Value);
+            }
+
+            if (maxPrice.HasValue)
+            {
+                query = query.Where(i => i.Price <= maxPrice.Value);
+            }
+
+            if (!string.IsNullOrWhiteSpace(level) && level != "Wszystkie poziomy")
+            {
+                bool isBase = level.ToLower() == "podstawa";
+                query = query.Where(i => i.Book.Level == isBase);
+            }
+
+            return query;
         }
     }
 }
