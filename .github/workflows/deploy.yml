@@ -33,38 +33,39 @@ jobs:
       # Retrieve secrets from Azure Key Vault
       - name: Get Secrets from Azure Key Vault
         id: keyvault
+        shell: pwsh
         run: |
           # Retrieve MSDeploy Username
-          MSDEPLOY_USERNAME=$(az keyvault secret show --name "MSDEPLOY-USERNAME" --vault-name "Booker" --query value -o tsv)
-          echo "::add-mask::$MSDEPLOY_USERNAME"
-          echo "MSDEPLOY_USERNAME=$MSDEPLOY_USERNAME" >> $GITHUB_ENV
+          $MSDEPLOY_USERNAME = az keyvault secret show --name "MSDEPLOY-USERNAME" --vault-name "Booker" --query value -o tsv
+          Write-Host "::add-mask::$MSDEPLOY_USERNAME"
+          echo "MSDEPLOY_USERNAME=$MSDEPLOY_USERNAME" >> $env:GITHUB_ENV
 
           # Retrieve MSDeploy Password
-          MSDEPLOY_PASSWORD=$(az keyvault secret show --name "MSDEPLOY-PASSWORD" --vault-name "Booker" --query value -o tsv)
-          echo "::add-mask::$MSDEPLOY_PASSWORD"
-          echo "MSDEPLOY_PASSWORD=$MSDEPLOY_PASSWORD" >> $GITHUB_ENV
+          $MSDEPLOY_PASSWORD = az keyvault secret show --name "MSDEPLOY-PASSWORD" --vault-name "Booker" --query value -o tsv
+          Write-Host "::add-mask::$MSDEPLOY_PASSWORD"
+          echo "MSDEPLOY_PASSWORD=$MSDEPLOY_PASSWORD" >> $env:GITHUB_ENV
 
           # Retrieve MSDeploy Service URL
-          MSDEPLOY_SERVICE_URL=$(az keyvault secret show --name "MSDEPLOY-SERVICE-URL" --vault-name "Booker" --query value -o tsv)
-          echo "MSDEPLOY_SERVICE_URL=$MSDEPLOY_SERVICE_URL" >> $GITHUB_ENV
+          $MSDEPLOY_SERVICE_URL = az keyvault secret show --name "MSDEPLOY-SERVICE-URL" --vault-name "Booker" --query value -o tsv
+          echo "MSDEPLOY_SERVICE_URL=$MSDEPLOY_SERVICE_URL" >> $env:GITHUB_ENV
 
           # Retrieve IIS App Path
-          MSDEPLOY_IIS_APP_PATH=$(az keyvault secret show --name "MSDEPLOY-IIS-APP-PATH" --vault-name "Booker" --query value -o tsv)
-          echo "MSDEPLOY_IIS_APP_PATH=$MSDEPLOY_IIS_APP_PATH" >> $GITHUB_ENV
+          $MSDEPLOY_IIS_APP_PATH = az keyvault secret show --name "MSDEPLOY-IIS-APP-PATH" --vault-name "Booker" --query value -o tsv
+          echo "MSDEPLOY_IIS_APP_PATH=$MSDEPLOY_IIS_APP_PATH" >> $env:GITHUB_ENV
 
           # Retrieve Database Connection Details
-          DB_HOST=$(az keyvault secret show --name "DB-HOST" --vault-name "Booker" --query value -o tsv)
-          DB_PORT=$(az keyvault secret show --name "DB-PORT" --vault-name "Booker" --query value -o tsv)
-          DB_NAME=$(az keyvault secret show --name "DB-NAME" --vault-name "Booker" --query value -o tsv)
-          DB_USER=$(az keyvault secret show --name "DB-USER" --vault-name "Booker" --query value -o tsv)
-          DB_PASS=$(az keyvault secret show --name "DB-PASSWORD" --vault-name "Booker" --query value -o tsv)
+          $DB_HOST = az keyvault secret show --name "DB-HOST" --vault-name "Booker" --query value -o tsv
+          $DB_PORT = az keyvault secret show --name "DB-PORT" --vault-name "Booker" --query value -o tsv
+          $DB_NAME = az keyvault secret show --name "DB-NAME" --vault-name "Booker" --query value -o tsv
+          $DB_USER = az keyvault secret show --name "DB-USER" --vault-name "Booker" --query value -o tsv
+          $DB_PASS = az keyvault secret show --name "DB-PASSWORD" --vault-name "Booker" --query value -o tsv
 
-          echo "::add-mask::$DB_PASS"
-          echo "DB_HOST=$DB_HOST" >> $GITHUB_ENV
-          echo "DB_PORT=$DB_PORT" >> $GITHUB_ENV
-          echo "DB_NAME=$DB_NAME" >> $GITHUB_ENV
-          echo "DB_USER=$DB_USER" >> $GITHUB_ENV
-          echo "DB_PASS=$DB_PASS" >> $GITHUB_ENV
+          Write-Host "::add-mask::$DB_PASS"
+          echo "DB_HOST=$DB_HOST" >> $env:GITHUB_ENV
+          echo "DB_PORT=$DB_PORT" >> $env:GITHUB_ENV
+          echo "DB_NAME=$DB_NAME" >> $env:GITHUB_ENV
+          echo "DB_USER=$DB_USER" >> $env:GITHUB_ENV
+          echo "DB_PASS=$DB_PASS" >> $env:GITHUB_ENV
     
       # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
       - name: Setup .NET SDKs
