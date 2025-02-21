@@ -85,7 +85,7 @@ jobs:
       - name: Replace db_connection_string token in appsettings.json
         shell: pwsh
         run: |
-          (Get-Content .\appsettings.json) |
+          (Get-Content .\Booker\appsettings.json) |
             ForEach-Object { $_ -replace '#{db-connection-string}#', "${{ env.DB_CONNECTION_STRING }}" } |
             Set-Content .\appsettings.json
         env:
