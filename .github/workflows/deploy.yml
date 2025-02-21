@@ -70,7 +70,7 @@ jobs:
           echo "MSDEPLOY_IIS_APP_PATH=$MSDEPLOY_IIS_APP_PATH" >> $GITHUB_ENV
 
           # Retrieve Database Connection String
-          DB_CONNECTION_STRING=$(az keyvault secret show --name "DB-CONNECTION-STRING" --vault-name "Booker" --query value -o tsv)
+          DB_CONNECTION_STRING=$(az keyvault secret show --name "DB-CONN-STRING" --vault-name "Booker" --query value -o tsv)
           echo "::add-mask::$DB_CONNECTION_STRING"
           echo "DB_CONNECTION_STRING=$DB_CONNECTION_STRING" >> $GITHUB_ENV
 
