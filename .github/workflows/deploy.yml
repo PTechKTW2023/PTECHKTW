@@ -25,7 +25,38 @@ jobs:
           subscription-id: 2fe4631b-3ade-4eda-bf70-a1dd7f0a86c1  # Subscription ID
           enable-AzPSSession: false  # Disable unnecessary PowerShell session
 
-      - name: Retrieve Secret from Key Vault
+      # Retrieve secrets from Azure Key Vault
+      - name: Get Secrets from Azure Key Vault
+        id: keyvault
         run: |
-          SECRET_VALUE=$(az keyvault secret show --name "test" --vault-name "Booker" --query value -o tsv)         
-          #echo "SECRET_VALUE=$SECRET_VALUE" >> $GITHUB_ENV
+          # Retrieve MSDeploy Username
+          MSDEPLOY_USERNAME=$(az keyvault secret show --name "MSDEPLOY-USERNAME" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          echo "::add-mask::$MSDEPLOY_USERNAME"
+          echo "MSDEPLOY_USERNAME=$MSDEPLOY_USERNAME" >> $GITHUB_ENV
+
+          # Retrieve MSDeploy Password
+          MSDEPLOY_PASSWORD=$(az keyvault secret show --name "MSDEPLOY-PASSWORD" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          echo "::add-mask::$MSDEPLOY_PASSWORD"
+          echo "MSDEPLOY_PASSWORD=$MSDEPLOY_PASSWORD" >> $GITHUB_ENV
+
+          # Retrieve MSDeploy Service URL
+          MSDEPLOY_SERVICE_URL=$(az keyvault secret show --name "MSDEPLOY-SERVICE-URL" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          echo "MSDEPLOY_SERVICE_URL=$MSDEPLOY_SERVICE_URL" >> $GITHUB_ENV
+
+          # Retrieve IIS App Path
+          MSDEPLOY_IIS_APP_PATH=$(az keyvault secret show --name "MSDEPLOY-IIS-APP-PATH" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          echo "MSDEPLOY_IIS_APP_PATH=$MSDEPLOY_IIS_APP_PATH" >> $GITHUB_ENV
+
+      # Run MSBuild with MSDeploy using secrets
+      - name: Build and Deploy Using MSDeploy
+        run: |
+          dotnet build YourProject.sln \
+          /p:DeployOnBuild=True \
+          /p:WebPublishMethod=MSDeploy \
+          /p:MSDeployPublishMethod=WMSVC \
+          /p:MSDeployServiceUrl=$MSDEPLOY_SERVICE_URL \
+          /p:UserName=$MSDEPLOY_USERNAME \
+          /p:Password=$MSDEPLOY_PASSWORD \
+          /p:DeployIISAppPath=$MSDEPLOY_IIS_APP_PATH \
+          /p:SkipExtraFilesOnServer=False \
+          /p:OutputPath=$(build.artifactstagingdirectory)
