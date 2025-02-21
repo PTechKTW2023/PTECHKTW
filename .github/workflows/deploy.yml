@@ -25,7 +25,7 @@ jobs:
           subscription-id: 2fe4631b-3ade-4eda-bf70-a1dd7f0a86c1  # Subscription ID
           enable-AzPSSession: false  # Disable unnecessary PowerShell session
 
-      # Retrieve secrets from Azure Key Vault
+            # Retrieve secrets from Azure Key Vault
       - name: Get Secrets from Azure Key Vault
         id: keyvault
         run: |
@@ -47,7 +47,29 @@ jobs:
           MSDEPLOY_IIS_APP_PATH=$(az keyvault secret show --name "MSDEPLOY-IIS-APP-PATH" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
           echo "MSDEPLOY_IIS_APP_PATH=$MSDEPLOY_IIS_APP_PATH" >> $GITHUB_ENV
 
-      # Run MSBuild with MSDeploy using secrets
+          # Retrieve Database Connection String
+          DB_CONNECTION_STRING=$(az keyvault secret show --name "DB-CONNECTION-STRING" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          echo "::add-mask::$DB_CONNECTION_STRING"
+          echo "DB_CONNECTION_STRING=$DB_CONNECTION_STRING" >> $GITHUB_ENV
+
+      # Setup .NET 9.0 SDK
+      - name: Setup .NET 9.0 SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'
+
+      # Restore dependencies
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      # Run EF Core Migrations
+      - name: Run EF Core Migrations
+        run: |
+          dotnet tool install --global dotnet-ef
+          export PATH="$PATH:/home/runner/.dotnet/tools"
+          dotnet ef database update --connection "$DB_CONNECTION_STRING"
+
+      # Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
         run: |
           dotnet build YourProject.sln \
