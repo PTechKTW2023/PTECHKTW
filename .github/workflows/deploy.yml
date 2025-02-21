@@ -18,15 +18,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          ref: release  # Ensure the workflow runs on the release branch
-
-      # Debug: Print GitHub Context
-      - name: Debug GitHub Context
-        run: |
-          echo "Repository: $GITHUB_REPOSITORY"
-          echo "Ref: $GITHUB_REF"
-          echo "Actor: $GITHUB_ACTOR"
-          echo "SHA: $GITHUB_SHA"
+          ref: release  # Ensure the workflow runs on the release branch      
 
       # Authenticate with Azure using OIDC
       - name: Azure Login with OIDC
@@ -36,17 +28,7 @@ jobs:
           tenant-id: a3fb7c77-7f12-4e8c-9864-240eadfb4fdb  # Azure Tenant ID
           subscription-id: 2fe4631b-3ade-4eda-bf70-a1dd7f0a86c1  # Subscription ID
           enable-AzPSSession: false
-          audience: api://AzureADTokenExchange  # Explicitly set the audience
-
-      # Debug: Fetch and Print OIDC Token
-      - name: Request OIDC Token
-        id: oidc-token
-        run: |
-          echo "Fetching OIDC token..."
-          TOKEN=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-          "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://AzureADTokenExchange")
-          echo "OIDC Token: $TOKEN"
-
+          audience: api://AzureADTokenExchange  # Explicitly set the audience      
       # Retrieve secrets from Azure Key Vault
       - name: Get Secrets from Azure Key Vault
         id: keyvault
@@ -69,10 +51,32 @@ jobs:
           MSDEPLOY_IIS_APP_PATH=$(az keyvault secret show --name "MSDEPLOY-IIS-APP-PATH" --vault-name "Booker" --query value -o tsv)
           echo "MSDEPLOY_IIS_APP_PATH=$MSDEPLOY_IIS_APP_PATH" >> $GITHUB_ENV
 
-          # Retrieve Database Connection String
-          DB_CONNECTION_STRING=$(az keyvault secret show --name "DB-CONNECTION" --vault-name "Booker" --query value -o tsv)
-          echo "::add-mask::$DB_CONNECTION_STRING"
-          echo "DB_CONNECTION_STRING=$DB_CONNECTION_STRING" >> $GITHUB_ENV
+          # Retrieve Database Connection Details
+          DB_HOST=$(az keyvault secret show --name "DB-HOST" --vault-name "Booker" --query value -o tsv)
+          DB_PORT=$(az keyvault secret show --name "DB-PORT" --vault-name "Booker" --query value -o tsv)
+          DB_NAME=$(az keyvault secret show --name "DB-NAME" --vault-name "Booker" --query value -o tsv)
+          DB_USER=$(az keyvault secret show --name "DB-USER" --vault-name "Booker" --query value -o tsv)
+          DB_PASS=$(az keyvault secret show --name "DB-PASSWORD" --vault-name "Booker" --query value -o tsv)
+
+          echo "::add-mask::$DB_PASS"
+          echo "DB_HOST=$DB_HOST" >> $GITHUB_ENV
+          echo "DB_PORT=$DB_PORT" >> $GITHUB_ENV
+          echo "DB_NAME=$DB_NAME" >> $GITHUB_ENV
+          echo "DB_USER=$DB_USER" >> $GITHUB_ENV
+          echo "DB_PASS=$DB_PASS" >> $GITHUB_ENV
+
+      # Install SQLCMD for SQL Connection Check
+      - name: Install SQLCMD
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
+          echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> $GITHUB_ENV
+
+      # Check SQL Server Connection Using Retrieved Secrets
+      - name: Test SQL Server Connection
+        run: |
+          echo "Testing SQL Server connection..."
+          /opt/mssql-tools/bin/sqlcmd -S $DB_HOST,$DB_PORT -U $DB_USER -P $DB_PASS -d $DB_NAME -Q "SELECT 'Connection Successful' AS Status" || { echo 'SQL Connection Failed'; exit 1; }
 
       # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
       - name: Setup .NET SDKs
@@ -96,6 +100,8 @@ jobs:
 
       # Run EF Core Migrations
       - name: Run EF Core Migrations
+        env:
+          DB_CONNECTION_STRING: "Data Source=$DB_HOST,$DB_PORT;Initial Catalog=$DB_NAME;User ID=$DB_USER;Password=$DB_PASS;Encrypt=False;TrustServerCertificate=False;MultipleActiveResultSets=True;Application Name=TextBookerApp"
         run: |
           dotnet ef database update --project ./Booker/Booker.csproj --connection "$DB_CONNECTION_STRING"
 
