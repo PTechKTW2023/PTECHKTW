@@ -93,6 +93,5 @@ jobs:
 
       # Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
-        run: |
-          export ARTIFACT_STAGING_DIRECTORY=${{ github.workspace }}/build_artifacts
+        run: |          
           dotnet build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl=$MSDEPLOY_SERVICE_URL /p:UserName=$MSDEPLOY_USERNAME /p:Password=$MSDEPLOY_PASSWORD /p:DeployIISAppPath=$MSDEPLOY_IIS_APP_PATH /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
