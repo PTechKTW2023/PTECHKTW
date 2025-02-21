@@ -94,7 +94,7 @@ jobs:
       # Force TLS 1.1 for the connection
       - name: Set TLS 1.1 for .NET Application
         run: |
-          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls11
+          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
           
       # Run EF Core Migrations
       - name: Run EF Core Migrations
