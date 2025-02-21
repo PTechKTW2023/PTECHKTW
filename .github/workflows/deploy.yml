@@ -18,7 +18,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          ref: release  # Ensure the workflow runs on the release branch      
+          ref: release  # Ensure the workflow runs on the release branch
+     
+      - name: Test SQL Connection with TLS 1.2
+        run: |
+          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+          $conn = New-Object System.Data.SqlClient.SqlConnection "server=mssql.webio.pl,2401;database=textbooker_stagedb;uid=textbooker_admin1;pwd=ThisIsAdmin123!;TrustServerCertificate=True"
+          $conn.Open()
+          Write-Host "Connection Successful!"
+          $conn.Close()
 
       # Authenticate with Azure using OIDC
       - name: Azure Login with OIDC
@@ -95,8 +103,6 @@ jobs:
       - name: Run EF Core Migrations      
         env:         
           DB_CONNECTION_STRING: ${{ env.DB_CONNECTION_STRING }}
-          DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER: 0
-          DOTNET_SYSTEM_NET_HTTP_SSL_PROTOCOLS: Tls11
         run: |
           dotnet ef database update --project .\Booker\Booker.csproj --connection "$env:DB_CONNECTION_STRING"
 
