@@ -89,17 +89,14 @@ jobs:
 
       # Restore dependencies
       - name: Restore Dependencies
-        run: dotnet restore .\Booker\Booker.sln  
-        
-      # Force TLS 1.1 for the connection
-      - name: Set TLS 1.1 for .NET Application
-        run: |
-          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+        run: dotnet restore .\Booker\Booker.sln
           
       # Run EF Core Migrations
-      - name: Run EF Core Migrations
+      - name: Run EF Core Migrations      
         env:         
-          DB_CONNECTION_STRING: ${{ env.DB_CONNECTION_STRING }}          
+          DB_CONNECTION_STRING: ${{ env.DB_CONNECTION_STRING }}
+          DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER: 0
+          DOTNET_SYSTEM_NET_HTTP_SSL_PROTOCOLS: Tls11
         run: |
           dotnet ef database update --project .\Booker\Booker.csproj --connection "$env:DB_CONNECTION_STRING"
 
