@@ -79,7 +79,7 @@ jobs:
         run: |
           echo "Testing SQL Server connection..."
            /opt/mssql-tools/bin/sqlcmd -?
-          /opt/mssql-tools/bin/sqlcmd -S "$DB_HOST,$DB_PORT" -U "$DB_USER" -P "$DB_PASS" -d "$DB_NAME" -Q "SELECT 'Connection Successful'" -N "false" -C
+          /opt/mssql-tools/bin/sqlcmd -S "$DB_HOST,$DB_PORT" -U "$DB_USER" -P "$DB_PASS" -d "$DB_NAME" -Q "SELECT 'Connection Successful'" -C
 
       # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
       - name: Setup .NET SDKs
