@@ -80,7 +80,7 @@ jobs:
         with:
           dotnet-version: |
             9.0.x
-            8.0.x  # Ensure .NET 8 is available for dotnet-ef dependencies
+            8.0.x
 
       # Install EF Core CLI globally
       - name: Install dotnet-ef Tool
