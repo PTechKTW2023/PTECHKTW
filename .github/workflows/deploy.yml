@@ -64,23 +64,7 @@ jobs:
           echo "DB_NAME=$DB_NAME" >> $GITHUB_ENV
           echo "DB_USER=$DB_USER" >> $GITHUB_ENV
           echo "DB_PASS=$DB_PASS" >> $GITHUB_ENV
-
-      # Install SQLCMD for SQL Connection Check
-      - name: Install SQLCMD
-        run: |        
-          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-          curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
-          sudo apt-get update
-          sudo ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev
-          echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> $GITHUB_ENV
-
-      # Check SQL Server Connection Using Retrieved Secrets
-      - name: Test SQL Server Connection
-        run: |
-          echo "Testing SQL Server connection..."
-           /opt/mssql-tools/bin/sqlcmd -?
-          /opt/mssql-tools/bin/sqlcmd -S "$DB_HOST,$DB_PORT" -U "$DB_USER" -P "$DB_PASS" -d "$DB_NAME" -Q "SELECT 'Connection Successful'" -C
-
+    
       # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
       - name: Setup .NET SDKs
         uses: actions/setup-dotnet@v3
