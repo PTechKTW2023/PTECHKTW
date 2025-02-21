@@ -78,8 +78,8 @@ jobs:
       - name: Test SQL Server Connection
         run: |
           echo "Testing SQL Server connection..."
-          /opt/mssql-tools/bin/sqlcmd -S "tcp:$DB_HOST,$DB_PORT" -U $DB_USER -P $DB_PASS -d $DB_NAME -Q "SELECT 'Connection Successful' AS Status" -l 30 -y 0 -b -C -N -X -o output.txt -M 1 -d master -Q "SET NOCOUNT ON; SELECT 'Connection Successful'" -U $DB_USER -P $DB_PASS -S "tcp:$DB_HOST,$DB_PORT;Encrypt=No"
-
+          /opt/mssql-tools/bin/sqlcmd -S "tcp:$DB_HOST,$DB_PORT" -U $DB_USER -P $DB_PASS -Q "SELECT 'Connection Successful'" -l 30 -y 0 -b -C -N -d $DB_NAME -S "tcp:$DB_HOST,$DB_PORT;Encrypt=No" || { echo 'SQL Connection Failed'; exit 1; }
+          
       # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
       - name: Setup .NET SDKs
         uses: actions/setup-dotnet@v3
