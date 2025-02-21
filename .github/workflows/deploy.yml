@@ -88,7 +88,7 @@ jobs:
       # Run EF Core Migrations
       - name: Run EF Core Migrations
         env:
-          DB_CONNECTION_STRING: "Data Source=$DB_HOST,$DB_PORT;Initial Catalog=$DB_NAME;User ID=$DB_USER;Password=$DB_PASS;Encrypt=False;TrustServerCertificate=False;MultipleActiveResultSets=True;Application Name=TextBookerApp"
+          DB_CONNECTION_STRING: "Data Source=$DB_HOST,$DB_PORT;Initial Catalog=$DB_NAME;User ID=$DB_USER;Password=$DB_PASS;Encrypt=False;TrustServerCertificate=True;"
         run: |
           dotnet ef database update --project ./Booker/Booker.csproj --connection "$DB_CONNECTION_STRING"
 
