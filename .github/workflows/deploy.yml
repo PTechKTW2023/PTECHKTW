@@ -68,7 +68,7 @@ jobs:
           echo "DB_PASS=$DB_PASS" >> $env:GITHUB_ENV
 
            # Construct the DB_CONNECTION_STRING
-          $env:DB_CONNECTION_STRING = "Data Source=$DB_HOST,$DB_PORT;Initial Catalog=$DB_NAME;User ID=$DB_USER;Password=$DB_PASS;Encrypt=False;TrustServerCertificate=True;"
+          $env:DB_CONNECTION_STRING = "server=$DB_HOST,$DB_PORT;database=$DB_NAME;uid=$DB_USER;pwd=$DB_PASS;TrustServerCertificate=True;"
           echo "DB_CONNECTION_STRING=$env:DB_CONNECTION_STRING" >> $env:GITHUB_ENV
     
       # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
@@ -89,18 +89,21 @@ jobs:
 
       # Restore dependencies
       - name: Restore Dependencies
-        run: dotnet restore .\Booker\Booker.sln     
+        run: dotnet restore .\Booker\Booker.sln  
+        
+      # Force TLS 1.1 for the connection
+      - name: Set TLS 1.1 for .NET Application
+        run: |
+          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls11
+          
+      # Run EF Core Migrations
+      - name: Run EF Core Migrations
+        env:         
+          DB_CONNECTION_STRING: ${{ env.DB_CONNECTION_STRING }}          
+        run: |
+          dotnet ef database update --project .\Booker\Booker.csproj --connection "$env:DB_CONNECTION_STRING"
 
       # Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
         run: |
-          dotnet build .\Booker\Booker.sln \
-          /p:DeployOnBuild=True \
-          /p:WebPublishMethod=MSDeploy \
-          /p:MSDeployPublishMethod=WMSVC \
-          /p:MSDeployServiceUrl=$MSDEPLOY_SERVICE_URL \
-          /p:UserName=$MSDEPLOY_USERNAME \
-          /p:Password=$MSDEPLOY_PASSWORD \
-          /p:DeployIISAppPath=$MSDEPLOY_IIS_APP_PATH \
-          /p:SkipExtraFilesOnServer=False \
-          /p:OutputPath=$(build.artifactstagingdirectory)
+          dotnet build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl=$MSDEPLOY_SERVICE_URL /p:UserName=$MSDEPLOY_USERNAME /p:Password=$MSDEPLOY_PASSWORD /p:DeployIISAppPath=$MSDEPLOY_IIS_APP_PATH /p:SkipExtraFilesOnServer=False /p:OutputPath=$(build.artifactstagingdirectory)
