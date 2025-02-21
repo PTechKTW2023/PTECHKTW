@@ -27,7 +27,7 @@ jobs:
           [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls11 -bor [Net.SecurityProtocolType]::Tls13
 
           # Create SQL Connection
-          $conn = New-Object System.Data.SqlClient.SqlConnection "server=mssql.webio.pl,2401;database=textbooker_stagedb;uid=textbooker_admin1;pwd=ThisIsAdmin123!;TrustServerCertificate=True"
+          $conn = New-Object System.Data.SqlClient.SqlConnection "server=mssql.webio.pl,2401;database=textbooker_stagedb;uid=textbooker_admin1;pwd=ThisIsAdmin123!;Encrypt=True;TrustServerCertificate=True"
           $conn.Open()
           Write-Host "✅ Connection Successful!"
           $conn.Close()
