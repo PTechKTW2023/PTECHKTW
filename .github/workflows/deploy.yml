@@ -67,8 +67,8 @@ jobs:
           echo "DB_USER=$DB_USER" >> $env:GITHUB_ENV
           echo "DB_PASS=$DB_PASS" >> $env:GITHUB_ENV
 
-          # Construct the DB_CONNECTION_STRING
-          $env:DB_CONNECTION_STRING = "server=mssql.webio.pl,2401;database=textbooker_stagedb;uid=textbooker_admin1;pwd=ThisIsAdmin123!;TrustServerCertificate=True;"
+           # Construct the DB_CONNECTION_STRING
+          $env:DB_CONNECTION_STRING = "Data Source=$DB_HOST,$DB_PORT;Initial Catalog=$DB_NAME;User ID=$DB_USER;Password=$DB_PASS;Encrypt=False;TrustServerCertificate=True;"
           echo "DB_CONNECTION_STRING=$env:DB_CONNECTION_STRING" >> $env:GITHUB_ENV
     
       # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
@@ -89,14 +89,7 @@ jobs:
 
       # Restore dependencies
       - name: Restore Dependencies
-        run: dotnet restore .\Booker\Booker.sln
-
-      # Run EF Core Migrations
-      - name: Run EF Core Migrations
-        env:         
-          DB_CONNECTION_STRING: ${{ env.DB_CONNECTION_STRING }}          
-        run: |
-          dotnet ef database update --project .\Booker\Booker.csproj --connection "$env:DB_CONNECTION_STRING"
+        run: dotnet restore .\Booker\Booker.sln     
 
       # Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
