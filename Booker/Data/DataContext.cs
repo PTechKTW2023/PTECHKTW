@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using System.Net;
 
 namespace Booker.Data
 {
@@ -14,7 +15,7 @@ namespace Booker.Data
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
