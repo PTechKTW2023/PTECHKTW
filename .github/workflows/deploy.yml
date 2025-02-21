@@ -1,4 +1,4 @@
-name: Secure Azure Key Vault Access with OIDC
+name: Build, Run EF Core Migrations, and Deploy (.NET 9.0)
 
 on:
   push:
@@ -6,49 +6,51 @@ on:
       - main
 
 permissions:
-  id-token: write  # Enable OIDC token for authentication
+  id-token: write  # Enable OIDC for Azure login
   contents: read
 
 jobs:
-  access-keyvault:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      # Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Authenticate with Azure using OIDC
+      # Authenticate with Azure using OIDC
+      - name: Azure Login with OIDC
         uses: azure/login@v1
         with:
-          client-id: fd4296f4-bdfb-4544-8203-c0fac560a7a0  # App ID 
+          client-id: fd4296f4-bdfb-4544-8203-c0fac560a7a0  # App ID
           tenant-id: a3fb7c77-7f12-4e8c-9864-240eadfb4fdb  # Azure Tenant ID
           subscription-id: 2fe4631b-3ade-4eda-bf70-a1dd7f0a86c1  # Subscription ID
           enable-AzPSSession: false  # Disable unnecessary PowerShell session
 
-            # Retrieve secrets from Azure Key Vault
+      # Retrieve secrets from Azure Key Vault
       - name: Get Secrets from Azure Key Vault
         id: keyvault
         run: |
           # Retrieve MSDeploy Username
-          MSDEPLOY_USERNAME=$(az keyvault secret show --name "MSDEPLOY-USERNAME" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          MSDEPLOY_USERNAME=$(az keyvault secret show --name "MSDEPLOY-USERNAME" --vault-name "Booker" --query value -o tsv)
           echo "::add-mask::$MSDEPLOY_USERNAME"
           echo "MSDEPLOY_USERNAME=$MSDEPLOY_USERNAME" >> $GITHUB_ENV
 
           # Retrieve MSDeploy Password
-          MSDEPLOY_PASSWORD=$(az keyvault secret show --name "MSDEPLOY-PASSWORD" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          MSDEPLOY_PASSWORD=$(az keyvault secret show --name "MSDEPLOY-PASSWORD" --vault-name "Booker" --query value -o tsv)
           echo "::add-mask::$MSDEPLOY_PASSWORD"
           echo "MSDEPLOY_PASSWORD=$MSDEPLOY_PASSWORD" >> $GITHUB_ENV
 
           # Retrieve MSDeploy Service URL
-          MSDEPLOY_SERVICE_URL=$(az keyvault secret show --name "MSDEPLOY-SERVICE-URL" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          MSDEPLOY_SERVICE_URL=$(az keyvault secret show --name "MSDEPLOY-SERVICE-URL" --vault-name "Booker" --query value -o tsv)
           echo "MSDEPLOY_SERVICE_URL=$MSDEPLOY_SERVICE_URL" >> $GITHUB_ENV
 
           # Retrieve IIS App Path
-          MSDEPLOY_IIS_APP_PATH=$(az keyvault secret show --name "MSDEPLOY-IIS-APP-PATH" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          MSDEPLOY_IIS_APP_PATH=$(az keyvault secret show --name "MSDEPLOY-IIS-APP-PATH" --vault-name "Booker" --query value -o tsv)
           echo "MSDEPLOY_IIS_APP_PATH=$MSDEPLOY_IIS_APP_PATH" >> $GITHUB_ENV
 
           # Retrieve Database Connection String
-          DB_CONNECTION_STRING=$(az keyvault secret show --name "DB-CONNECTION-STRING" --vault-name "<KEYVAULT_NAME>" --query value -o tsv)
+          DB_CONNECTION_STRING=$(az keyvault secret show --name "DB-CONNECTION-STRING" --vault-name "Booker" --query value -o tsv)
           echo "::add-mask::$DB_CONNECTION_STRING"
           echo "DB_CONNECTION_STRING=$DB_CONNECTION_STRING" >> $GITHUB_ENV
 
@@ -82,3 +84,4 @@ jobs:
           /p:DeployIISAppPath=$MSDEPLOY_IIS_APP_PATH \
           /p:SkipExtraFilesOnServer=False \
           /p:OutputPath=$(build.artifactstagingdirectory)
+
