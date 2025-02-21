@@ -1,0 +1,31 @@
+name: Secure Azure Key Vault Access with OIDC
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write  # Enable OIDC token for authentication
+  contents: read
+
+jobs:
+  access-keyvault:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Authenticate with Azure using OIDC
+        uses: azure/login@v1
+        with:
+          client-id: fd4296f4-bdfb-4544-8203-c0fac560a7a0  # App ID 
+          tenant-id: a3fb7c77-7f12-4e8c-9864-240eadfb4fdb  # Azure Tenant ID
+          subscription-id: 2fe4631b-3ade-4eda-bf70-a1dd7f0a86c1  # Subscription ID
+          enable-AzPSSession: false  # Disable unnecessary PowerShell session
+
+      - name: Retrieve Secret from Key Vault
+        run: |
+          SECRET_VALUE=$(az keyvault secret show --name "T_S" --vault-name Booker" --query value -o tsv)         
+          #echo "SECRET_VALUE=$SECRET_VALUE" >> $GITHUB_ENV
