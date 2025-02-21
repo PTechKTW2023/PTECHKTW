@@ -1,4 +1,4 @@
-name: Build, Run EF Core Migrations, and Deploy (.NET 9.0)
+name: Build, Run EF Core Migrations, and Deploy (.NET 9.0) with OIDC Debugging
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - release  # Trigger workflow on push to the release branch
 
 permissions:
-  id-token: write  # Enable OIDC for Azure login
-  contents: read
+  id-token: write  # Required for OIDC authentication
+  contents: read   # Required to checkout the repo
 
 jobs:
   build-deploy:
@@ -20,6 +20,14 @@ jobs:
         with:
           ref: release  # Ensure the workflow runs on the release branch
 
+      # Debug: Print GitHub Context
+      - name: Debug GitHub Context
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Ref: $GITHUB_REF"
+          echo "Actor: $GITHUB_ACTOR"
+          echo "SHA: $GITHUB_SHA"
+
       # Authenticate with Azure using OIDC
       - name: Azure Login with OIDC
         uses: azure/login@v1
@@ -27,7 +35,17 @@ jobs:
           client-id: fd4296f4-bdfb-4544-8203-c0fac560a7a0  # App ID
           tenant-id: a3fb7c77-7f12-4e8c-9864-240eadfb4fdb  # Azure Tenant ID
           subscription-id: 2fe4631b-3ade-4eda-bf70-a1dd7f0a86c1  # Subscription ID
-          enable-AzPSSession: false  # Disable unnecessary PowerShell session
+          enable-AzPSSession: false
+          audience: api://AzureADTokenExchange  # Explicitly set the audience
+
+      # Debug: Fetch and Print OIDC Token
+      - name: Request OIDC Token
+        id: oidc-token
+        run: |
+          echo "Fetching OIDC token..."
+          TOKEN=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+          "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://AzureADTokenExchange")
+          echo "OIDC Token: $TOKEN"
 
       # Retrieve secrets from Azure Key Vault
       - name: Get Secrets from Azure Key Vault
