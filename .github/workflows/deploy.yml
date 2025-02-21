@@ -19,13 +19,30 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: release  # Ensure the workflow runs on the release branch
-     
+          
+      - name: Enforce Strong Cryptography via Registry
+        shell: pwsh
+        run: |
+          # Apply registry changes for both 64-bit and 32-bit .NET Framework
+          Write-Host "🔧 Setting Strong Cryptography in Registry..."
+
+          # 64-bit .NET Framework
+          New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319" `
+            -Name "SchUseStrongCrypto" -PropertyType DWord -Value 1 -Force
+          New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319" `
+            -Name "SystemDefaultTlsVersions" -PropertyType DWord -Value 1 -Force
+
+          # 32-bit .NET Framework
+          New-ItemProperty -Path "HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319" `
+            -Name "SchUseStrongCrypto" -PropertyType DWord -Value 1 -Force
+          New-ItemProperty -Path "HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319" `
+            -Name "SystemDefaultTlsVersions" -PropertyType DWord -Value 1 -Force
+
+          Write-Host "✅ Registry changes applied."
+
       - name: Test SQL Connection with TLS 1.2
         run: |
           try {
-
-          # Allow TLS 1.0, 1.1, and 1.2
-          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls11 -bor [Net.SecurityProtocolType]::Tls
           
           # Create SQL Connection
           $conn = New-Object System.Data.SqlClient.SqlConnection "server=mssql.webio.pl,2401;database=textbooker_stagedb;uid=textbooker_admin1;pwd=ThisIsAdmin123!;Encrypt=True;TrustServerCertificate=True"
