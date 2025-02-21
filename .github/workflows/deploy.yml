@@ -74,11 +74,21 @@ jobs:
           echo "::add-mask::$DB_CONNECTION_STRING"
           echo "DB_CONNECTION_STRING=$DB_CONNECTION_STRING" >> $GITHUB_ENV
 
-      # Setup .NET 9.0 SDK
-      - name: Setup .NET 9.0 SDK
+      # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
+      - name: Setup .NET SDKs
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: |
+            9.0.x
+            8.0.x  # Ensure .NET 8 is available for dotnet-ef dependencies
+
+      # Install EF Core CLI globally
+      - name: Install dotnet-ef Tool
+        run: dotnet tool install --global dotnet-ef
+
+      # Ensure dotnet-ef is in PATH
+      - name: Add dotnet tools to PATH
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
       # Restore dependencies
       - name: Restore Dependencies
@@ -87,8 +97,6 @@ jobs:
       # Run EF Core Migrations
       - name: Run EF Core Migrations
         run: |
-          dotnet tool install --global dotnet-ef
-          export PATH="$PATH:/home/runner/.dotnet/tools"
           dotnet ef database update --project ./Booker/Booker.csproj --connection "$DB_CONNECTION_STRING"
 
       # Build and Deploy Using MSDeploy
