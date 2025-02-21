@@ -3,7 +3,7 @@ name: Build, Run EF Core Migrations, and Deploy (.NET 9.0)
 on:
   push:
     branches:
-      - main
+      - release  # Trigger workflow on push to the release branch
 
 permissions:
   id-token: write  # Enable OIDC for Azure login
@@ -17,6 +17,8 @@ jobs:
       # Checkout code
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          ref: release  # Ensure the workflow runs on the release branch
 
       # Authenticate with Azure using OIDC
       - name: Azure Login with OIDC
@@ -62,19 +64,19 @@ jobs:
 
       # Restore dependencies
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore ./Booker/Booker.sln
 
       # Run EF Core Migrations
       - name: Run EF Core Migrations
         run: |
           dotnet tool install --global dotnet-ef
           export PATH="$PATH:/home/runner/.dotnet/tools"
-          dotnet ef database update --connection "$DB_CONNECTION_STRING"
+          dotnet ef database update --project ./Booker/Booker.csproj --connection "$DB_CONNECTION_STRING"
 
       # Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
         run: |
-          dotnet build YourProject.sln \
+          dotnet build ./Booker/Booker.sln \
           /p:DeployOnBuild=True \
           /p:WebPublishMethod=MSDeploy \
           /p:MSDeployPublishMethod=WMSVC \
@@ -84,4 +86,3 @@ jobs:
           /p:DeployIISAppPath=$MSDEPLOY_IIS_APP_PATH \
           /p:SkipExtraFilesOnServer=False \
           /p:OutputPath=$(build.artifactstagingdirectory)
-
