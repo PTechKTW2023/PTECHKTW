@@ -18,44 +18,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          ref: release  # Ensure the workflow runs on the release branch
-          
-      - name: Enforce Strong Cryptography via Registry
-        shell: pwsh
-        run: |
-          # Apply registry changes for both 64-bit and 32-bit .NET Framework
-          Write-Host "🔧 Setting Strong Cryptography in Registry..."
-
-          # 64-bit .NET Framework
-          New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319" `
-            -Name "SchUseStrongCrypto" -PropertyType DWord -Value 1 -Force
-          New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\.NETFramework\v4.0.30319" `
-            -Name "SystemDefaultTlsVersions" -PropertyType DWord -Value 1 -Force
-
-          # 32-bit .NET Framework
-          New-ItemProperty -Path "HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319" `
-            -Name "SchUseStrongCrypto" -PropertyType DWord -Value 1 -Force
-          New-ItemProperty -Path "HKLM:\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319" `
-            -Name "SystemDefaultTlsVersions" -PropertyType DWord -Value 1 -Force
-
-          Write-Host "✅ Registry changes applied."
-
-      - name: Test SQL Connection with TLS 1.2
-        run: |
-          try {
-          
-          # Create SQL Connection
-          $conn = New-Object System.Data.SqlClient.SqlConnection "server=mssql.webio.pl,2401;database=textbooker_stagedb;uid=textbooker_admin1;pwd=ThisIsAdmin123!;Encrypt=True;TrustServerCertificate=True"
-          $conn.Open()
-          Write-Host "✅ Connection Successful!"
-          $conn.Close()
-          }
-          catch {
-            Write-Error "❌ Connection failed: $($_.Exception.Message)"
-            if ($_.Exception.InnerException) {
-              Write-Error "💡 Inner Exception: $($_.Exception.InnerException.Message)"
-            }
-          }
+          ref: release  # Ensure the workflow runs on the release branch     
 
       # Authenticate with Azure using OIDC
       - name: Azure Login with OIDC
@@ -113,27 +76,20 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
-            9.0.x
-            8.0.x
-
-      # Install EF Core CLI globally
-      - name: Install dotnet-ef Tool
-        run: dotnet tool install --global dotnet-ef
-
-      # Ensure dotnet-ef is in PATH
-      - name: Add dotnet tools to PATH
-        run: echo "$env:USERPROFILE\.dotnet\tools" >> $GITHUB_PATH
+            9.0.x          
 
       # Restore dependencies
       - name: Restore Dependencies
         run: dotnet restore .\Booker\Booker.sln
-          
-      # Run EF Core Migrations
-      - name: Run EF Core Migrations      
-        env:         
-          DB_CONNECTION_STRING: ${{ env.DB_CONNECTION_STRING }}
+
+      - name: Replace db_connection_string token in appsettings.json
+        shell: pwsh
         run: |
-          dotnet ef database update --project .\Booker\Booker.csproj --connection "$env:DB_CONNECTION_STRING"
+          (Get-Content .\appsettings.json) |
+            ForEach-Object { $_ -replace '#{db-connection-string}#', "${{ env.DB_CONNECTION_STRING }}" } |
+            Set-Content .\appsettings.json
+        env:
+          DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
 
       # Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
