@@ -66,6 +66,10 @@ jobs:
           echo "DB_NAME=$DB_NAME" >> $env:GITHUB_ENV
           echo "DB_USER=$DB_USER" >> $env:GITHUB_ENV
           echo "DB_PASS=$DB_PASS" >> $env:GITHUB_ENV
+
+          # Construct the DB_CONNECTION_STRING
+          $env:DB_CONNECTION_STRING = "Data Source=$DB_HOST,$DB_PORT;Initial Catalog=$DB_NAME;User ID=$DB_USER;Password=$DB_PASS;Encrypt=False;TrustServerCertificate=True;"
+          echo "DB_CONNECTION_STRING=$env:DB_CONNECTION_STRING" >> $env:GITHUB_ENV
     
       # Setup .NET SDKs (Install both .NET 9.0.x and .NET 8.0.x)
       - name: Setup .NET SDKs
@@ -90,15 +94,9 @@ jobs:
       # Run EF Core Migrations
       - name: Run EF Core Migrations
         env:         
-          DB_HOST: ${{ env.DB_HOST }}
-          DB_PORT: ${{ env.DB_PORT }}
-          DB_NAME: ${{ env.DB_NAME }}
-          DB_USER: ${{ env.DB_USER }}
-          DB_PASS: ${{ env.DB_PASS }}          
+          DB_CONNECTION_STRING: ${{ env.DB_CONNECTION_STRING }}          
         run: |
-          DB_CONNECTION_STRING="Data Source=$DB_HOST,$DB_PORT;Initial Catalog=$DB_NAME;User ID=$DB_USER;Password=$DB_PASS;Encrypt=False;TrustServerCertificate=True;"
-          echo $DB_CONNECTION_STRING         
-          dotnet ef database update --project .\Booker\Booker.csproj --connection "$DB_CONNECTION_STRING"
+          dotnet ef database update --project .\Booker\Booker.csproj --connection "$env:DB_CONNECTION_STRING"
 
       # Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
