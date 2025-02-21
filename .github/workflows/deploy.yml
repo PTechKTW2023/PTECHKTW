@@ -23,12 +23,10 @@ jobs:
       - name: Test SQL Connection with TLS 1.2
         run: |
           try {
-          # Remove older TLS versions
-          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-          # Enable stronger ciphers if possible
-          [System.Net.ServicePointManager]::Expect100Continue = $false
-
+          # Allow TLS 1.0, 1.1, and 1.2
+          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls11 -bor [Net.SecurityProtocolType]::Tls
+          
           # Create SQL Connection
           $conn = New-Object System.Data.SqlClient.SqlConnection "server=mssql.webio.pl,2401;database=textbooker_stagedb;uid=textbooker_admin1;pwd=ThisIsAdmin123!;Encrypt=True;TrustServerCertificate=True"
           $conn.Open()
