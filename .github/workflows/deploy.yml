@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-22.04
+    runs-on: windows-latest  # Use Windows runner for Windows hosting
 
     steps:
       # Checkout code
@@ -28,7 +28,8 @@ jobs:
           tenant-id: a3fb7c77-7f12-4e8c-9864-240eadfb4fdb  # Azure Tenant ID
           subscription-id: 2fe4631b-3ade-4eda-bf70-a1dd7f0a86c1  # Subscription ID
           enable-AzPSSession: false
-          audience: api://AzureADTokenExchange  # Explicitly set the audience      
+          audience: api://AzureADTokenExchange  # Explicitly set the audience
+
       # Retrieve secrets from Azure Key Vault
       - name: Get Secrets from Azure Key Vault
         id: keyvault
@@ -79,11 +80,11 @@ jobs:
 
       # Ensure dotnet-ef is in PATH
       - name: Add dotnet tools to PATH
-        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+        run: echo "$env:USERPROFILE\.dotnet\tools" >> $GITHUB_PATH
 
       # Restore dependencies
       - name: Restore Dependencies
-        run: dotnet restore ./Booker/Booker.sln
+        run: dotnet restore .\Booker\Booker.sln
 
       # Run EF Core Migrations
       - name: Run EF Core Migrations
@@ -96,12 +97,12 @@ jobs:
         run: |
           DB_CONNECTION_STRING="Data Source=$DB_HOST,$DB_PORT;Initial Catalog=$DB_NAME;User ID=$DB_USER;Password=$DB_PASS;Encrypt=False;TrustServerCertificate=True;"
           echo $DB_CONNECTION_STRING         
-          dotnet ef database update --project ./Booker/Booker.csproj --connection "$DB_CONNECTION_STRING"
+          dotnet ef database update --project .\Booker\Booker.csproj --connection "$DB_CONNECTION_STRING"
 
       # Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
         run: |
-          dotnet build ./Booker/Booker.sln \
+          dotnet build .\Booker\Booker.sln \
           /p:DeployOnBuild=True \
           /p:WebPublishMethod=MSDeploy \
           /p:MSDeployPublishMethod=WMSVC \
