@@ -42,7 +42,7 @@ jobs:
 
           # Retrieve MSDeploy Password
           $MSDEPLOY_PASSWORD = az keyvault secret show --name "MSDEPLOY-PASSWORD" --vault-name "Booker" --query value -o tsv
-          $MSDEPLOY_PASSWORD = $MSDEPLOY_PASSWORD -replace ';', '%3B
+          $MSDEPLOY_PASSWORD = $MSDEPLOY_PASSWORD -replace ';', '%3B'
           Write-Host "::add-mask::$MSDEPLOY_PASSWORD"
           echo "MSDEPLOY_PASSWORD=$MSDEPLOY_PASSWORD" >> $env:GITHUB_ENV
 
