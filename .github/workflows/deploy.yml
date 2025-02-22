@@ -94,6 +94,9 @@ jobs:
       - name: Build and Deploy
         shell: pwsh
         run: 
-          $passwordInterpreted = $env:MSDEPLOY_PASSWORD;
-          dotnet build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl=$env:MSDEPLOY_SERVICE_URL /p:UserName=$env:MSDEPLOY_USERNAME /p:Password="$passwordInterpreted" /p:DeployIISAppPath=$env:MSDEPLOY_IIS_APP_PATH /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
+          $deployUser = $env:MSDEPLOY_USERNAME;
+          $deploypassword = $env:MSDEPLOY_PASSWORD;
+          $deployUrl = $env:MSDEPLOY_SERVICE_URL;
+          $iisAppPath = $env:MSDEPLOY_IIS_APP_PATH;          
+          dotnet --% build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl="$deployUrl" /p:UserName="$deployUser" /p:Password="$deploypassword" /p:DeployIISAppPath="$iisAppPath" /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
         
