@@ -1,4 +1,4 @@
-:name: Build, Run EF Core Migrations, and Deploy (.NET 9.0) with OIDC Debugging
+name: Build and Deploy (.NET 9.0) with OIDC Debugging
 
 on:
   push:
