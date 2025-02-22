@@ -94,9 +94,7 @@ jobs:
       - name: Build and Deploy
         shell: pwsh
         run: |
-          Write-Host "Start interpretations of variables";
-         
-          # Write-Host "${{env:MSDEPLOY_USERNAME}}";
+          Write-Host "Start interpretations of variables";         
           Write-Host "$env:MSDEPLOY_PASSWORD"
           Write-Host $env:MSDEPLOY_USERNAME
           Write-Host "Finished interpreation of vbariables"
