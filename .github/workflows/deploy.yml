@@ -95,7 +95,7 @@ jobs:
         shell: pwsh
         run: |
           Write-Host "Start interpretations of variables";
-          # Write-Host ${{env:MSDEPLOY_USERNAME}};
+         
           # Write-Host "${{env:MSDEPLOY_USERNAME}}";
           Write-Host "$env:MSDEPLOY_USERNAME"
           Write-Host $env:MSDEPLOY_USERNAME
