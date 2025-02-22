@@ -99,7 +99,6 @@ jobs:
           Write-Host $env:MSDEPLOY_USERNAME
           Write-Host "Finished interpreation of vbariables"
           $deploypassword = ${{$env:MSDEPLOY_IIS_APP_PATH}};
-          $deployUrl = $env:MSDEPLOY_SERVICE_URL;
           $iisAppPath = $env:MSDEPLOY_IIS_APP_PATH;          
           dotnet --% build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl=$deployUrl /p:UserName=$deployUser /p:Password=$deploypassword /p:DeployIISAppPath=$iisAppPath /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
         
