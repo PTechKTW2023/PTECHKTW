@@ -91,9 +91,11 @@ jobs:
             ForEach-Object { $_ -replace '#{db-connection-string}#', "$env:DB_CONNECTION_STRING" } |
             Set-Content .\Booker\appsettings.json
 
-      # 7. Build and Deploy Using MSDeploy
-      - name: Build and Deploy Using MSDeploy
+      - name: Build and Deploy
         shell: pwsh
-        run: |          
-         dotnet build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl=${{env:MSDEPLOY_SERVICE_URL}} /p:UserName=${{env:MSDEPLOY_USERNAME}} /p:Password=${{env:MSDEPLOY_PASSWORD}} /p:DeployIISAppPath=${{env:MSDEPLOY_IIS_APP_PATH}} /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
-
+        run: dotnet build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl="$env:MSDEPLOY_SERVICE_URL" /p:UserName="$env:MSDEPLOY_USERNAME" /p:Password="$env:MSDEPLOY_PASSWORD" /p:DeployIISAppPath="$env:MSDEPLOY_IIS_APP_PATH" /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
+        env:
+          MSDEPLOY_USERNAME: ${{ secrets.MSDEPLOY_USERNAME }}
+          MSDEPLOY_PASSWORD: ${{ secrets.MSDEPLOY_PASSWORD }}
+          MSDEPLOY_SERVICE_URL: ssl.webio.pl:8172/msdeploy.axd?site=textbooker.pl
+          MSDEPLOY_IIS_APP_PATH: textbooker.pl
