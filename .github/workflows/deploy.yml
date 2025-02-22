@@ -42,6 +42,7 @@ jobs:
 
           # Retrieve MSDeploy Password
           $MSDEPLOY_PASSWORD = az keyvault secret show --name "MSDEPLOY-PASSWORD" --vault-name "Booker" --query value -o tsv
+          $MSDEPLOY_PASSWORD = $MSDEPLOY_PASSWORD -replace ';', '%3B
           Write-Host "::add-mask::$MSDEPLOY_PASSWORD"
           echo "MSDEPLOY_PASSWORD=$MSDEPLOY_PASSWORD" >> $env:GITHUB_ENV
 
@@ -93,6 +94,7 @@ jobs:
 
       - name: Build and Deploy
         shell: pwsh
-        run: |                  
-          dotnet build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl=$env:MSDEPLOY_SERVICE_URL /p:UserName=$env:MSDEPLOY_USERNAME "/p:Password=$env:MSDEPLOY_PASSWORD" /p:DeployIISAppPath=$env:MSDEPLOY_IIS_APP_PATH /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
+        run: |   
+          echo $env:MSDEPLOY_PASSWORD
+          dotnet build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MSDeployServiceUrl=$env:MSDEPLOY_SERVICE_URL /p:UserName=$env:MSDEPLOY_USERNAME /p:Password=$env:MSDEPLOY_PASSWORD /p:DeployIISAppPath=$env:MSDEPLOY_IIS_APP_PATH /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
         
