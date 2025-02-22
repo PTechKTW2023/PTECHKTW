@@ -94,7 +94,6 @@ jobs:
       # 7. Build and Deploy Using MSDeploy
       - name: Build and Deploy Using MSDeploy
         shell: pwsh
-        run: |
-          Write-Host "DEBUG: MsDeploy URL = $env:MSDEPLOY_SERVICE_URL"
+        run: |          
           dotnet build .\Booker\Booker.sln /p:DeployOnBuild=True /p:WebPublishMethod=MSDeploy /p:MSDeployPublishMethod=WMSVC /p:MsDeployServiceUrl=$env:MSDEPLOY_SERVICE_URL /p:UserName=$env:MSDEPLOY_USERNAME /p:*** /p:DeployIISAppPath=$env:MSDEPLOY_IIS_APP_PATH /p:SkipExtraFilesOnServer=False /p:OutputPath=".\Booker\build_artifacts"
 
