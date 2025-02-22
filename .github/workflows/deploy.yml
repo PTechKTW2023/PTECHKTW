@@ -98,7 +98,6 @@ jobs:
           Write-Host "$env:MSDEPLOY_PASSWORD"
           Write-Host $env:MSDEPLOY_USERNAME
           Write-Host "Finished interpreation of vbariables"
-          $deployUser = ${{env:MSDEPLOY_SERVICE_URL}};
           $deploypassword = ${{$env:MSDEPLOY_IIS_APP_PATH}};
           $deployUrl = $env:MSDEPLOY_SERVICE_URL;
           $iisAppPath = $env:MSDEPLOY_IIS_APP_PATH;          
