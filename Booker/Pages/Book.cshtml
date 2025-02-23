@@ -25,7 +25,7 @@
                 Klasa:
                 @(Model.BookItem?.Book?.BookGrades?.FirstOrDefault()?.Grade?.GradeNumber ?? "nieznana")
             </li>
-            <li>Przedmiot: @(Model.BookItem?.Book?.Subject ?? "Nieznany przedmiot")</li>
+            <li>Przedmiot: @(Model.BookItem?.Book?.Subject?.Name ?? "Nieznany przedmiot")</li>
             <li>
                 Zakres:
                 @(Model.BookItem?.Book?.Level == null

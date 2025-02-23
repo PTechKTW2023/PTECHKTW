@@ -21,6 +21,7 @@ namespace Booker.Pages
         {
             BookItem = await _context.Items
                 .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
+                .Include(i => i.Book).ThenInclude(b => b.Subject)
                 .Include(i => i.User)
                 .FirstOrDefaultAsync(i => i.Id == id);
 
