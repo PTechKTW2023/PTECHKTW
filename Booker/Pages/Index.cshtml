@@ -5,72 +5,89 @@
 }
 
 <section class="filter">
-    <details>
-        <summary>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-            </svg>
-            Filtry
-        </summary>
-        <form hx-get="/" hx-trigger="input changed delay:500ms, change" hx-target=".grid-gallery" hx-push-url="true"
-              hx-include="[name='search'], [name='grade'], [name='subject'], [name='minPrice'], [name='maxPrice'], [name='level']"
-              hx-vals='{"pageNumber": 0}'>
-            <input type="search" name="search" placeholder="Wyszukaj..." />
+    <form hx-get="/" hx-trigger="input changed delay:500ms, change" hx-target=".grid-gallery" hx-push-url="true"
+          hx-include="[name='search'], [name='grade'], [name='subject'], [name='minPrice'], [name='maxPrice'], [name='level']"
+          hx-vals='{"pageNumber": 0}'>
+        <input type="search" name="search" placeholder="Wyszukaj..." />
+
+        <details id="filterDetails">
+            <summary id="filterSummary">
+                <svg>
+                    <use href="img/icons.svg#si-awesome-sliders" />
+                </svg>
+                Filtry
+            </summary>
 
             <div class="grid">
                 <select name="grade">
-                    <option value="">Wszystkie klasy</option>
-                    <option value="Klasa 1.">Klasa 1.</option>
-                    <option value="Klasa 2.">Klasa 2.</option>
-                    <option value="Klasa 3.">Klasa 3.</option>
-                    <option value="Klasa 4.">Klasa 4.</option>
-                    <option value="Klasa 5.">Klasa 5.</option>
+                    <option value="">@GradeLevels.Wszystkie</option>
+                    @{
+                        var gradeLevels = typeof(GradeLevels)
+                            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                            .Where(f => f.FieldType == typeof(string))
+                            .Select(f => f.GetValue(null) as string)
+                            .Where(s => s != GradeLevels.Wszystkie)
+                            .OrderBy(s => s);
+
+                        foreach (var gradeLevel in gradeLevels)
+                        {
+                                    <option value="@gradeLevel">@gradeLevel</option>
+                        }
+                    }
                 </select>
 
                 <select name="subject">
-                    <option value="">Wszystkie przedmioty</option>
-                    <option value="Polski">Język polski</option>
-                    <option value="Matematyka">Matematyka</option>
-                    <option value="Język angielski">Język angielski</option>
-                    <option value="Biologia">Biologia</option>
-                    <option value="Fizyka">Fizyka</option>
-                    <option value="Język Niemiecki">Język niemiecki</option>
-                    <option value="EDB">Edukacja dla bezpieczeństwa</option>
-                    <option value="Geografia">Geografia</option>
-                    <option value="Historia">Historia</option>
-                    <option value="Historia i Teraźniejszość">Historia i Teraźniejszość</option>
-                    <option value="Informatyka">Informatyka</option>
-                    <option value="Podstawy przedsiębiorczości">Podstawy przedsiębiorczości</option>
-                    <option value="Biznes i zarządzanie">Biznes i zarządzanie</option>
-                    <option value="Plastyka">Plastyka</option>
-                    <option value="WOS">Wiedza o społeczeństwie</option>
-                    <option value="Angielski zawodowy">Język angielski zawodowy</option>
+                    <option value="">@SubjectNames.Wszystkie</option>
+                    @{
+                        var subjectNames = typeof(SubjectNames)
+                            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                            .Where(f => f.FieldType == typeof(string))
+                            .Select(f => f.GetValue(null) as string)
+                            .Where(s => s != SubjectNames.Wszystkie)
+                            .OrderBy(s => s);
+
+                        foreach (var subjectName in subjectNames)
+                        {
+                                    <option value="@subjectName">@subjectName</option>
+                        }
+                    }
                 </select>
 
                 <select name="level">
-                    <option value="">Wszystkie poziomy</option>
-                    <option value="Podstawa">Podstawa</option>
-                    <option value="Rozszerzenie">Rozszerzenie</option>
+                    <option value="">@BookLevels.Wszystkie</option>
+                    @{
+                        var bookLevels = typeof(BookLevels)
+                            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                            .Where(f => f.FieldType == typeof(string))
+                            .Select(f => f.GetValue(null) as string)
+                            .Where(s => s != BookLevels.Wszystkie)
+                            .OrderBy(s => s);
+
+                        foreach (var bookLevel in bookLevels)
+                        {
+                                    <option value="@bookLevel">@bookLevel</option>
+                        }
+                    }
                 </select>
 
                 <input type="number" name="minPrice" placeholder="Cena min." />
                 <input type="number" name="maxPrice" placeholder="Cena max." />
             </div>
-        </form>
-    </details>
+            <button type="button" id="mobileFilterSubmit">Zatwierdź filtry</button>
+        </details>
+    </form>
 </section>
 
 <section class="grid-gallery">
-    @if (Model.ItemsList != null)
-    {
-        @await Html.PartialAsync("_ItemGallery", Model.ItemsList)
-    }
-    else
-    {
-        <p>Brak wyników lub trwa ładowanie...</p>
-    }
+    @await Html.PartialAsync("_ItemGallery", Model.ItemsList)
 </section>
 
 <section>
     <div aria-busy="true" class="htmx-indicator" id="ind"></div>
 </section>
+
+<script>
+    document.getElementById('mobileFilterSubmit').addEventListener('click', function() {
+        document.getElementById('filterDetails').removeAttribute("open");
+    });
+</script>
