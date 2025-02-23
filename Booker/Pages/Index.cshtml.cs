@@ -82,6 +82,7 @@ namespace Booker.Pages
         {
             var query = _context.Items
                 .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
+                .Include(i => i.Book).ThenInclude(b => b.Subject)
                 .Include(i => i.User)
                 .AsQueryable();
 
