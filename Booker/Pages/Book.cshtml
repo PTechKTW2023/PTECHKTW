@@ -22,8 +22,8 @@
 
         <ul>
             <li>
-                Klasa:
-                @(Model.BookItem?.Book?.Grades?.FirstOrDefault()?.GradeNumber ?? "nieznana")
+                Klasa: @String.Join(", ", 
+                Model.BookItem?.Book?.Grades?.Select( g => g.GradeNumber ).ToList() ?? new() {"nieznana"})
             </li>
             <li>Przedmiot: @(Model.BookItem?.Book?.Subject?.Name ?? "Nieznany przedmiot")</li>
             <li>
