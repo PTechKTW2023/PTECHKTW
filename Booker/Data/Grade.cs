@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string GradeNumber { get; set; }
 
-        public ICollection<BookGrade> BookGrades { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

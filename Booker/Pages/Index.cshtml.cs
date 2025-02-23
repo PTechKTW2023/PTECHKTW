@@ -53,7 +53,7 @@ namespace Booker.Pages
             Subjects = subjects;
 
             var query = _context.Items
-                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
+                .Include(i => i.Book).ThenInclude(b => b.Grades)
                 .Include(i => i.Book).ThenInclude(b => b.Subject)
                 .Include(i => i.User)
                 .AsQueryable();
@@ -81,7 +81,7 @@ namespace Booker.Pages
         public async Task<IActionResult> OnGetMoreAsync([FromQuery] FilterParameters parameters)
         {
             var query = _context.Items
-                .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
+                .Include(i => i.Book).ThenInclude(b => b.Grades)
                 .Include(i => i.Book).ThenInclude(b => b.Subject)
                 .Include(i => i.User)
                 .AsQueryable();
@@ -124,7 +124,7 @@ namespace Booker.Pages
         {
             return string.IsNullOrWhiteSpace(grade)
                 ? query
-                : query.Where(i => i.Book.BookGrades.Any(bg => bg.Grade.GradeNumber.ToString() == grade.Replace("Klasa ", "").TrimEnd('.').Trim()));
+                : query.Where(i => i.Book.Grades.Any(g => g.GradeNumber.ToString() == grade.Replace("Klasa ", "").TrimEnd('.').Trim()));
         }
 
         private IQueryable<Item> ApplySubjectFilter(IQueryable<Item> query, string? subject)

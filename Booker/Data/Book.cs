@@ -8,7 +8,7 @@ namespace Booker.Data
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }
-        public ICollection<BookGrade> BookGrades { get; set; }
+        public ICollection<Grade> Grades { get; set; }
         [Required]
         public int SubjectId { get; set; }
         public Subject Subject { get; set; }

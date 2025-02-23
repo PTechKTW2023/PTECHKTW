@@ -8,14 +8,13 @@ namespace Booker.Data
     {
         public DbSet<Book> Books { get; set; }
         public DbSet<Item> Items { get; set; }
-        
         public DbSet<Grade> Grades { get; set; }
-        public DbSet<BookGrade> BookGrades { get; set; }
         public DbSet<Subject> Subjects { get; set; }
 
         // C# doesn't support static local variables in methods, so we have to use a field instead
         private static IEnumerator<int> bookIdGenerator = GenerateAscendingIntegers().GetEnumerator();
 
+        private record BookGrade(int BookId, int GradeId);
         private static List<BookGrade> bookGrades = new List<BookGrade>();
 
 
@@ -35,11 +34,19 @@ namespace Booker.Data
 
             modelBuilder.Entity<Grade>().HasData(SeedData.Grades);
 
-            modelBuilder.Entity<Book>().HasData(SeedData.Books);
-
-            modelBuilder.Entity<BookGrade>().HasKey(bg => new { bg.BookId, bg.GradeId });
-
-            modelBuilder.Entity<BookGrade>().HasData(bookGrades);
+            modelBuilder.Entity<Book>(b =>
+            {
+                b.HasData(SeedData.Books);
+                b.HasMany(b => b.Grades).WithMany(g => g.Books)
+                    .UsingEntity("BookGrades",
+                    g => g.HasOne(typeof(Grade)).WithMany().HasForeignKey("GradeId").HasPrincipalKey(nameof(Grade.Id)),
+                    b => b.HasOne(typeof(Book)).WithMany().HasForeignKey("BookId").HasPrincipalKey(nameof(Book.Id)),
+                    bg =>
+                    {
+                        bg.HasKey("BookId", "GradeId");
+                        bg.HasData(bookGrades);
+                    });
+            });
 
 
 
@@ -121,7 +128,7 @@ namespace Booker.Data
             var id = GetNextId(bookIdGenerator);
             foreach (var grade in grades)
             {
-                bookGrades.Add(new BookGrade { BookId = id, GradeId = grade });
+                bookGrades.Add(new BookGrade(BookId: id, GradeId: grade));
             }
 
             return new Book
