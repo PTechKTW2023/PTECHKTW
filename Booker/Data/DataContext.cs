@@ -57,119 +57,119 @@ namespace Booker.Data
 
             modelBuilder.Entity<Book>().HasData(
                 // Polski
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 1 cz. 1", SubjectId = 1, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 1 cz. 2", SubjectId = 1, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 2 cz. 1", SubjectId = 1, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 2 cz. 2", SubjectId = 1, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 3 cz. 1", SubjectId = 1, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 3 cz. 2", SubjectId = 1, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 4", SubjectId = 1, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 1 cz. 1", SubjectId = 1, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 1 cz. 2", SubjectId = 1, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 2 cz. 1", SubjectId = 1, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 2 cz. 2", SubjectId = 1, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 3 cz. 1", SubjectId = 1, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 3 cz. 2", SubjectId = 1, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Ponad słowami 4", SubjectId = 1, Level = false },
 
                 // Język angielski
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 2 Podręcznik", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 3 Podręcznik", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 4 Podręcznik", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 5 Podręcznik", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 2 Ćwiczenia", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 3 Ćwiczenia", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 4 Ćwiczenia", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 5 Ćwiczenia", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "My matura perspectives [nowa era]", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Repetytorium [Macmillan]", SubjectId = 2, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Repetytorium maturzysty [Oxford]", SubjectId = 2, Level = false },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Repetytorium maturzysty [Cambridge, PWN]", SubjectId = 2, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 2 Podręcznik", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 3 Podręcznik", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 4 Podręcznik", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 5 Podręcznik", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 2 Ćwiczenia", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 3 Ćwiczenia", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 4 Ćwiczenia", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Focus 5 Ćwiczenia", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "My matura perspectives [nowa era]", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Repetytorium [Macmillan]", SubjectId = 2, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Repetytorium maturzysty [Oxford]", SubjectId = 2, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Repetytorium maturzysty [Cambridge, PWN]", SubjectId = 2, Level = false },
 
                 // Język Niemiecki
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Welttour Deutsch 1", SubjectId = 3, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Welttour Deutsch 2", SubjectId = 3, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Welttour Deutsch 3", SubjectId = 3, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Welttour Deutsch 4", SubjectId = 3, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Effekt 1", SubjectId = 3, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Effekt 2", SubjectId = 3, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Effekt 3", SubjectId = 3, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Effekt 4", SubjectId = 3, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Welttour Deutsch 1", SubjectId = 3, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Welttour Deutsch 2", SubjectId = 3, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Welttour Deutsch 3", SubjectId = 3, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Welttour Deutsch 4", SubjectId = 3, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Effekt 1", SubjectId = 3, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Effekt 2", SubjectId = 3, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Effekt 3", SubjectId = 3, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Effekt 4", SubjectId = 3, Level = false },
 
                 // Biologia
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 1", SubjectId = 4, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 2", SubjectId = 4, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 3", SubjectId = 4, Level = true },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 1", SubjectId = 4, Level = false },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 2", SubjectId = 4, Level = false },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 3", SubjectId = 4, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 1", SubjectId = 4, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 2", SubjectId = 4, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Biologia na czasie 3", SubjectId = 4, Level = true },
 
                 // Chemia
-                new Book { Id = GetNextId(bookIdGenerator), Title = "To jest chemia 1", SubjectId = 5, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "To jest chemia 2", SubjectId = 5, Level = true },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "To jest chemia 1", SubjectId = 5, Level = false },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "To jest chemia 2", SubjectId = 5, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "To jest chemia 1", SubjectId = 5, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "To jest chemia 2", SubjectId = 5, Level = true },
 
                 // EDB
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Edukacja dla bezpieczeństwa [wsip]", SubjectId = 6, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Edukacja dla bezpieczeństwa [wsip]", SubjectId = 6, Level = false },
 
                 // Fizyka
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 1 [wsip]", SubjectId = 7, Level = false },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 2 [wsip]", SubjectId = 7, Level = false },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 3 [wsip]", SubjectId = 7, Level = false },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 4 [wsip]", SubjectId = 7, Level = false },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 1 [wsip]", SubjectId = 7, Level = true },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 2 [wsip]", SubjectId = 7, Level = true },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 3 [wsip]", SubjectId = 7, Level = true },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 4 [wsip]", SubjectId = 7, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 1 [wsip]", SubjectId = 7, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 2 [wsip]", SubjectId = 7, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 3 [wsip]", SubjectId = 7, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Fizyka 4 [wsip]", SubjectId = 7, Level = false },
 
                 // Geografia
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Oblicza geografii 1", SubjectId = 8, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Oblicza geografii 2", SubjectId = 8, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Oblicz geografii karty pracy 1", SubjectId = 8, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Oblicz geografii karty pracy 2", SubjectId = 8, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Oblicza geografii 1", SubjectId = 8, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Oblicza geografii 2", SubjectId = 8, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Oblicz geografii karty pracy 1", SubjectId = 8, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Oblicz geografii karty pracy 2", SubjectId = 8, Level = false },
 
                 // Historia
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia [wsip] 1", SubjectId = 9, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia [wsip] 2", SubjectId = 9, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia [wsip] 3", SubjectId = 9, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia [wsip] 4", SubjectId = 9, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia [wsip] 1", SubjectId = 9, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia [wsip] 2", SubjectId = 9, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia [wsip] 3", SubjectId = 9, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia [wsip] 4", SubjectId = 9, Level = false },
 
                 // HiT
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia i teraźniejszość [wsip] 1", SubjectId = 10, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia i teraźniejszość [wsip] 2", SubjectId = 10, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia i teraźniejszość [wsip] 1", SubjectId = 10, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Historia i teraźniejszość [wsip] 2", SubjectId = 10, Level = false },
 
                 // Informatyka
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Informatyka [operon]", SubjectId = 11, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Informatyka dla szkół ponadgimnazjalnych [Migra]", SubjectId = 11, Level = true },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Informatyka [operon]", SubjectId = 11, Level = false },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "Informatyka dla szkół ponadgimnazjalnych [Migra]", SubjectId = 11, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Informatyka [operon]", SubjectId = 11, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Informatyka dla szkół ponadgimnazjalnych [Migra]", SubjectId = 11, Level = true },
 
                 // Matematyka
-                new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 1", SubjectId = 12, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 2", SubjectId = 12, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 3", SubjectId = 12, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 4", SubjectId = 12, Level = true },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 1", SubjectId = 12, Level = false },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 2", SubjectId = 12, Level = false },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 3", SubjectId = 12, Level = false },
                 new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 4", SubjectId = 12, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 1", SubjectId = 12, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 2", SubjectId = 12, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 3", SubjectId = 12, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "NOWA MATeMAtyka 4", SubjectId = 12, Level = true },
 
                 // Podstawy przedsiębiorczości
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Krok w przedsiębiorczość", SubjectId = 13, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Krok w przedsiębiorczość", SubjectId = 13, Level = false },
 
                 // Biznes i zarządzanie
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Krok w biznes i zarządzanie 1", SubjectId = 14, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Krok w biznes i zarządzanie 2", SubjectId = 14, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Krok w biznes i zarządzanie 1", SubjectId = 14, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Krok w biznes i zarządzanie 2", SubjectId = 14, Level = false },
 
                 // Plastyka
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Spotkania ze sztuką 1", SubjectId = 15, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Spotkania ze sztuką 1", SubjectId = 15, Level = false },
 
                 // WOS
-                new Book { Id = GetNextId(bookIdGenerator), Title = "W centrum uwagi 1", SubjectId = 16, Level = true },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "W centrum uwagi 2", SubjectId = 16, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "W centrum uwagi 1", SubjectId = 16, Level = false },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "W centrum uwagi 2", SubjectId = 16, Level = false },
 
                 // Angielski zawodowy
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Electronics", SubjectId = 17, Level = false },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Electrician", SubjectId = 17, Level = false },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Software engineering", SubjectId = 17, Level = false },
-                new Book { Id = GetNextId(bookIdGenerator), Title = "IT [english for IT]", SubjectId = 17, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Electronics", SubjectId = 17, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Electrician", SubjectId = 17, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Software engineering", SubjectId = 17, Level = true },
+                new Book { Id = GetNextId(bookIdGenerator), Title = "IT [english for IT]", SubjectId = 17, Level = false },
 
                 // Informatyka
-                new Book { Id = GetNextId(bookIdGenerator), Title = "Informatyka w praktyce", SubjectId = 11, Level = false }
+                new Book { Id = GetNextId(bookIdGenerator), Title = "Informatyka w praktyce", SubjectId = 11, Level = true }
             );
 
             modelBuilder.Entity<BookGrade>().HasKey(bg => new { bg.BookId, bg.GradeId });

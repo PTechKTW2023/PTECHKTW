@@ -30,7 +30,7 @@
                 Zakres:
                 @(Model.BookItem?.Book?.Level == null
                     ? "Nieznany zakres"
-                    : (Model.BookItem.Book.Level == true ? "podstawowy" : "rozszerzony"))
+                    : (Model.BookItem.Book.Level == true ? "rozszerzony" : "podstawowy"))
             </li>
             <li>Stan: @(Model.BookItem?.State ?? "Nieznany stan")</li>
         </ul>

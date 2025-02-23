@@ -143,7 +143,7 @@ namespace Booker.Pages
         {
             return string.IsNullOrWhiteSpace(level)
                 ? query
-                : query.Where(i => i.Book.Level == level.Equals("Podstawa", StringComparison.OrdinalIgnoreCase));
+                : query.Where(i => i.Book.Level == level.Equals("Rozszerzenie", StringComparison.OrdinalIgnoreCase));
         }
     }
 }

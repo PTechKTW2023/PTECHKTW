@@ -13,7 +13,7 @@ namespace Booker.Data
         public int SubjectId { get; set; }
         public Subject Subject { get; set; }
         [Required]
-        public bool Level { get; set; }
+        public bool? Level { get; set; }
         public ICollection<Item> Items { get; set; }
     }
 }
