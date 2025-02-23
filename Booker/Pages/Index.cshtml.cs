@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Booker.TagHelpers;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Booker.Pages
 {
@@ -10,21 +11,47 @@ namespace Booker.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly DataContext _context;
+        private readonly IMemoryCache _cache;
         const int PageSize = 25;
 
         public record PagedListViewModel(List<Item> Items, int Page, bool HasMorePages);
         public record FilterParameters(int PageNumber, string? Search, string? Grade, string? Subject, decimal? MinPrice, decimal? MaxPrice, string? Level);
 
         public PagedListViewModel? ItemsList { get; set; }
+        public List<string>? Grades { get; set; }
+        public List<string>? Subjects { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, DataContext context)
+        public IndexModel(ILogger<IndexModel> logger, DataContext context, IMemoryCache cache)
         {
             _logger = logger;
             _context = context;
+            _cache = cache;
         }
 
         public async Task<IActionResult> OnGetAsync([FromQuery] FilterParameters parameters)
         {
+            if (!_cache.TryGetValue("grades", out List<string>? grades))
+            {
+                grades = await _context.Grades
+                    .OrderBy(g => g.Id)
+                    .Select(g => g.GradeNumber.ToString())
+                    .ToListAsync();
+                _cache.Set("grades", grades, TimeSpan.FromHours(1));
+            }
+
+            Grades = grades;
+
+            if (!_cache.TryGetValue("subjects", out List<string>? subjects))
+            {
+                subjects = await _context.Subjects
+                    .OrderBy(s => s.Id)
+                    .Select(s => s.Name)
+                    .ToListAsync();
+                _cache.Set("subjects", subjects, TimeSpan.FromHours(1));
+            }
+
+            Subjects = subjects;
+
             var query = _context.Items
                 .Include(i => i.Book).ThenInclude(b => b.BookGrades).ThenInclude(bg => bg.Grade)
                 .Include(i => i.Book).ThenInclude(b => b.Subject)
@@ -94,16 +121,16 @@ namespace Booker.Pages
 
         private IQueryable<Item> ApplyGradeFilter(IQueryable<Item> query, string? grade)
         {
-            return string.IsNullOrWhiteSpace(grade) || grade == GradeLevels.Wszystkie
+            return string.IsNullOrWhiteSpace(grade)
                 ? query
                 : query.Where(i => i.Book.BookGrades.Any(bg => bg.Grade.GradeNumber.ToString() == grade.Replace("Klasa ", "").TrimEnd('.').Trim()));
         }
 
         private IQueryable<Item> ApplySubjectFilter(IQueryable<Item> query, string? subject)
         {
-            return string.IsNullOrWhiteSpace(subject) || subject == SubjectNames.Wszystkie
+            return string.IsNullOrWhiteSpace(subject)
                 ? query
-                : query.Where(i => i.Book.Subject == subject);
+                : query.Where(i => i.Book.Subject.Name == subject);
         }
 
         private IQueryable<Item> ApplyPriceFilters(IQueryable<Item> query, decimal? minPrice, decimal? maxPrice)
@@ -114,9 +141,9 @@ namespace Booker.Pages
 
         private IQueryable<Item> ApplyLevelFilter(IQueryable<Item> query, string? level)
         {
-            return string.IsNullOrWhiteSpace(level) || level == BookLevels.Wszystkie
+            return string.IsNullOrWhiteSpace(level)
                 ? query
-                : query.Where(i => i.Book.Level == level.Equals(BookLevels.Podstawa, StringComparison.OrdinalIgnoreCase));
+                : query.Where(i => i.Book.Level == level.Equals("Podstawa", StringComparison.OrdinalIgnoreCase));
         }
     }
 }
