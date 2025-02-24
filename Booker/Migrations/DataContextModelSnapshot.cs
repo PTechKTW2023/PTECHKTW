@@ -1103,217 +1103,52 @@ namespace Booker.Migrations
                         new
                         {
                             Id = 1,
-                            BookId = 20,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(728),
+                            BookId = 15,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(44),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 64.714285714285714285714285714m,
+                            Price = 40.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
-                            BookId = 40,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(772),
+                            BookId = 72,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(102),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 70.142857142857142857142857143m,
+                            Price = 72m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 3,
-                            BookId = 15,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(776),
+                            BookId = 2,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(106),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 43.857142857142857142857142857m,
+                            Price = 56.714285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 4,
-                            BookId = 32,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(884),
+                            BookId = 73,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(109),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 85.14285714285714285714285714m,
+                            Price = 79.28571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 5,
-                            BookId = 78,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(889),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 49.142857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 5
-                        },
-                        new
-                        {
-                            Id = 6,
-                            BookId = 23,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(892),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 36.142857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            BookId = 65,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(896),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 29.857142857142857142857142857m,
-                            State = "bardzo dobry",
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 8,
-                            BookId = 37,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(898),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 55m,
-                            State = "bardzo dobry",
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 9,
-                            BookId = 35,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(903),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 44.714285714285714285714285714m,
-                            State = "bardzo dobry",
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 10,
-                            BookId = 17,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(906),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 80.42857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 5
-                        },
-                        new
-                        {
-                            Id = 11,
-                            BookId = 10,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(909),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 70.571428571428571428571428571m,
-                            State = "bardzo dobry",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 12,
-                            BookId = 17,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(914),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 45.285714285714285714285714286m,
-                            State = "bardzo dobry",
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 13,
-                            BookId = 28,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(917),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 81.42857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 14,
-                            BookId = 51,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(919),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 70m,
-                            State = "bardzo dobry",
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 15,
-                            BookId = 5,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(922),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 82.57142857142857142857142857m,
-                            State = "bardzo dobry",
-                            UserId = 5
-                        },
-                        new
-                        {
-                            Id = 16,
-                            BookId = 17,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(925),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 22m,
-                            State = "bardzo dobry",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 17,
-                            BookId = 23,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(928),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 36.571428571428571428571428571m,
-                            State = "bardzo dobry",
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 18,
-                            BookId = 22,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(977),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 58.714285714285714285714285714m,
-                            State = "bardzo dobry",
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 19,
-                            BookId = 13,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(979),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 33m,
-                            State = "bardzo dobry",
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 20,
-                            BookId = 35,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(982),
+                            BookId = 14,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(114),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                             Price = 46.571428571428571428571428571m,
@@ -1322,287 +1157,452 @@ namespace Booker.Migrations
                         },
                         new
                         {
-                            Id = 21,
-                            BookId = 55,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(986),
+                            Id = 6,
+                            BookId = 3,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(117),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 48.714285714285714285714285714m,
+                            Price = 34.142857142857142857142857143m,
+                            State = "bardzo dobry",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BookId = 60,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(120),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 52.428571428571428571428571429m,
+                            State = "bardzo dobry",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BookId = 62,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(125),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 65.571428571428571428571428571m,
+                            State = "bardzo dobry",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 9,
+                            BookId = 61,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(128),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 31.571428571428571428571428571m,
+                            State = "bardzo dobry",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 10,
+                            BookId = 51,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(131),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 85.57142857142857142857142857m,
+                            State = "bardzo dobry",
+                            UserId = 5
+                        },
+                        new
+                        {
+                            Id = 11,
+                            BookId = 9,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(134),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 80.14285714285714285714285714m,
+                            State = "bardzo dobry",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BookId = 8,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(159),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 44.714285714285714285714285714m,
+                            State = "bardzo dobry",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            BookId = 47,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(163),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 39.571428571428571428571428571m,
+                            State = "bardzo dobry",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 14,
+                            BookId = 39,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(166),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 84m,
+                            State = "bardzo dobry",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 15,
+                            BookId = 64,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(169),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 54.714285714285714285714285714m,
+                            State = "bardzo dobry",
+                            UserId = 5
+                        },
+                        new
+                        {
+                            Id = 16,
+                            BookId = 11,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(173),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 66.285714285714285714285714286m,
+                            State = "bardzo dobry",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 17,
+                            BookId = 75,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(175),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 55m,
+                            State = "bardzo dobry",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 18,
+                            BookId = 71,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(179),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 41m,
+                            State = "bardzo dobry",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 19,
+                            BookId = 15,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(182),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 26.142857142857142857142857143m,
+                            State = "bardzo dobry",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 20,
+                            BookId = 67,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(186),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 83.28571428571428571428571429m,
+                            State = "bardzo dobry",
+                            UserId = 5
+                        },
+                        new
+                        {
+                            Id = 21,
+                            BookId = 18,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(189),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 66.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 22,
-                            BookId = 45,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(989),
+                            BookId = 24,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(192),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 79.85714285714285714285714286m,
+                            Price = 68.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 23,
-                            BookId = 66,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(993),
+                            BookId = 51,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(195),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 69.428571428571428571428571429m,
+                            Price = 61.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 24,
-                            BookId = 40,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(996),
+                            BookId = 67,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(199),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 22.571428571428571428571428571m,
+                            Price = 65m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 25,
-                            BookId = 46,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1000),
+                            BookId = 8,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(202),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 49.571428571428571428571428571m,
+                            Price = 60.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 26,
-                            BookId = 77,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1003),
+                            BookId = 68,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(205),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 67.571428571428571428571428571m,
+                            Price = 72.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 27,
-                            BookId = 4,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1006),
+                            BookId = 51,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(208),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 37.857142857142857142857142857m,
+                            Price = 53.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 28,
-                            BookId = 73,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1009),
+                            BookId = 8,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(211),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 48.857142857142857142857142857m,
+                            Price = 68.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 29,
-                            BookId = 24,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1012),
+                            BookId = 2,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(214),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 49m,
+                            Price = 54.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 30,
-                            BookId = 51,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1016),
+                            BookId = 58,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(217),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 44.857142857142857142857142857m,
+                            Price = 43m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 31,
-                            BookId = 58,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1019),
+                            BookId = 19,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(220),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 82m,
+                            Price = 77.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 32,
-                            BookId = 61,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1022),
+                            BookId = 11,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(225),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 49.571428571428571428571428571m,
+                            Price = 64.428571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 33,
-                            BookId = 67,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1025),
+                            BookId = 18,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(228),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 67.142857142857142857142857143m,
+                            Price = 47.714285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 34,
-                            BookId = 10,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1029),
+                            BookId = 18,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(231),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 27.142857142857142857142857143m,
+                            Price = 27m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 35,
-                            BookId = 11,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1033),
+                            BookId = 56,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(234),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 73.571428571428571428571428571m,
+                            Price = 46.714285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 36,
-                            BookId = 33,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1036),
+                            BookId = 66,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(238),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 39.857142857142857142857142857m,
+                            Price = 48.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 37,
-                            BookId = 20,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1039),
+                            BookId = 14,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(241),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 45.714285714285714285714285714m,
+                            Price = 22.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 38,
-                            BookId = 37,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1042),
+                            BookId = 43,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(244),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 34m,
+                            Price = 79.57142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 39,
-                            BookId = 55,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1045),
+                            BookId = 37,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(247),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 41.571428571428571428571428571m,
+                            Price = 56.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 40,
-                            BookId = 44,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1048),
+                            BookId = 58,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(250),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 41.142857142857142857142857143m,
+                            Price = 80.14285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 41,
-                            BookId = 10,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1052),
+                            BookId = 18,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(254),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 63.142857142857142857142857143m,
+                            Price = 61.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 42,
-                            BookId = 13,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1056),
+                            BookId = 67,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(257),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 30.714285714285714285714285714m,
+                            Price = 79.42857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 43,
-                            BookId = 23,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1059),
+                            BookId = 12,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(261),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 76.285714285714285714285714286m,
+                            Price = 48.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 44,
-                            BookId = 37,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1063),
+                            BookId = 32,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(264),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 47.714285714285714285714285714m,
+                            Price = 45.428571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 45,
-                            BookId = 12,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1066),
+                            BookId = 66,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(267),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 34.285714285714285714285714286m,
+                            Price = 75.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 46,
-                            BookId = 69,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1069),
+                            BookId = 36,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(271),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 42.428571428571428571428571429m,
+                            Price = 27.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
@@ -1610,43 +1610,43 @@ namespace Booker.Migrations
                         {
                             Id = 47,
                             BookId = 2,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1072),
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(275),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 54.857142857142857142857142857m,
+                            Price = 25.428571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 48,
-                            BookId = 65,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1075),
+                            BookId = 34,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(278),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 20m,
+                            Price = 35.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 49,
-                            BookId = 39,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1078),
+                            BookId = 43,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(281),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 39.857142857142857142857142857m,
+                            Price = 32.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 50,
-                            BookId = 24,
-                            DateTime = new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1081),
+                            BookId = 4,
+                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(284),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 35.714285714285714285714285714m,
+                            Price = 52.714285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 5
                         });
@@ -1717,7 +1717,7 @@ namespace Booker.Migrations
                         new
                         {
                             Id = 10,
-                            Name = "HiT"
+                            Name = "Historia i teraźniejszość"
                         },
                         new
                         {
@@ -1752,7 +1752,7 @@ namespace Booker.Migrations
                         new
                         {
                             Id = 17,
-                            Name = "Angielski zawodowy"
+                            Name = "Język angielski zawodowy"
                         });
                 });
 
@@ -1835,7 +1835,7 @@ namespace Booker.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "87f941fd-4d94-4bd4-9b4e-42270bcb8247",
+                            ConcurrencyStamp = "b60c32af-3b1d-4afb-a38c-492a843446c5",
                             Email = "user1@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -1849,7 +1849,7 @@ namespace Booker.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "46860185-1c3f-46e5-85e4-d7a948b40548",
+                            ConcurrencyStamp = "dd4497ab-bbfd-419f-b141-00028859ecfe",
                             Email = "user2@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -1863,7 +1863,7 @@ namespace Booker.Migrations
                         {
                             Id = 3,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "117bfcc9-a3e4-472e-9389-8355745d1aa5",
+                            ConcurrencyStamp = "4af4eabd-7d9c-4968-bc48-c5f5a97003be",
                             Email = "user3@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -1877,7 +1877,7 @@ namespace Booker.Migrations
                         {
                             Id = 4,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0f8b0533-e839-4fff-a7a4-68ae0ccd84ce",
+                            ConcurrencyStamp = "47fde348-0bb9-4535-9046-9dceba8c72d1",
                             Email = "user4@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -1891,7 +1891,7 @@ namespace Booker.Migrations
                         {
                             Id = 5,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b1c20dc7-1a3b-4cf0-b61c-2fb26cf988dc",
+                            ConcurrencyStamp = "7973b629-c99d-4ab7-b10d-9c7c7f351c52",
                             Email = "user5@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,

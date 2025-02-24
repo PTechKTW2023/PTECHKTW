@@ -34,7 +34,7 @@ namespace Booker.Pages
             {
                 grades = await _context.Grades
                     .OrderBy(g => g.Id)
-                    .Select(g => g.GradeNumber.ToString())
+                    .Select(g => g.GradeNumber)
                     .ToListAsync();
                 _cache.Set("grades", grades, TimeSpan.FromHours(1));
             }
@@ -44,7 +44,7 @@ namespace Booker.Pages
             if (!_cache.TryGetValue("subjects", out List<string>? subjects))
             {
                 subjects = await _context.Subjects
-                    .OrderBy(s => s.Id)
+                    .OrderBy(s => s.Name)
                     .Select(s => s.Name)
                     .ToListAsync();
                 _cache.Set("subjects", subjects, TimeSpan.FromHours(1));
@@ -124,7 +124,7 @@ namespace Booker.Pages
         {
             return string.IsNullOrWhiteSpace(grade)
                 ? query
-                : query.Where(i => i.Book.Grades.Any(g => g.GradeNumber.ToString() == grade.Replace("Klasa ", "").TrimEnd('.').Trim()));
+                : query.Where(i => i.Book.Grades.Any(g => g.GradeNumber == grade));
         }
 
         private IQueryable<Item> ApplySubjectFilter(IQueryable<Item> query, string? subject)

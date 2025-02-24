@@ -25,14 +25,14 @@
             new Subject { Id = 7, Name = "Fizyka" },
             new Subject { Id = 8, Name = "Geografia" },
             new Subject { Id = 9, Name = "Historia" },
-            new Subject { Id = 10, Name = "HiT" },
+            new Subject { Id = 10, Name = "Historia i teraźniejszość" },
             new Subject { Id = 11, Name = "Informatyka" },
             new Subject { Id = 12, Name = "Matematyka" },
             new Subject { Id = 13, Name = "Podstawy przedsiębiorczości" },
             new Subject { Id = 14, Name = "Biznes i zarządzanie" },
             new Subject { Id = 15, Name = "Plastyka" },
             new Subject { Id = 16, Name = "WOS" },
-            new Subject { Id = 17, Name = "Angielski zawodowy" }
+            new Subject { Id = 17, Name = "Język angielski zawodowy" }
         };
 
         public static List<Book> Books = new List<Book>

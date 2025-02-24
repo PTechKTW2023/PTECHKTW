@@ -62,35 +62,35 @@ namespace Booker.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "ConcurrencyStamp",
-                value: "87f941fd-4d94-4bd4-9b4e-42270bcb8247");
+                value: "b60c32af-3b1d-4afb-a38c-492a843446c5");
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "ConcurrencyStamp",
-                value: "46860185-1c3f-46e5-85e4-d7a948b40548");
+                value: "dd4497ab-bbfd-419f-b141-00028859ecfe");
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: 3,
                 column: "ConcurrencyStamp",
-                value: "117bfcc9-a3e4-472e-9389-8355745d1aa5");
+                value: "4af4eabd-7d9c-4968-bc48-c5f5a97003be");
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: 4,
                 column: "ConcurrencyStamp",
-                value: "0f8b0533-e839-4fff-a7a4-68ae0ccd84ce");
+                value: "47fde348-0bb9-4535-9046-9dceba8c72d1");
 
             migrationBuilder.UpdateData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
                 keyValue: 5,
                 column: "ConcurrencyStamp",
-                value: "b1c20dc7-1a3b-4cf0-b61c-2fb26cf988dc");
+                value: "7973b629-c99d-4ab7-b10d-9c7c7f351c52");
 
             migrationBuilder.InsertData(
                 table: "BookGrades",
@@ -662,278 +662,278 @@ namespace Booker.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 20, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(728), 64.714285714285714285714285714m });
+                values: new object[] { 15, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(44), 40.142857142857142857142857143m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 2,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 40, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(772), 70.142857142857142857142857143m });
+                values: new object[] { 72, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(102), 72m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 3,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 15, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(776), 43.857142857142857142857142857m });
+                values: new object[] { 2, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(106), 56.714285714285714285714285714m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 4,
-                columns: new[] { "DateTime", "Price" },
-                values: new object[] { new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(884), 85.14285714285714285714285714m });
+                columns: new[] { "BookId", "DateTime", "Price" },
+                values: new object[] { 73, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(109), 79.28571428571428571428571429m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 5,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 78, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(889), 49.142857142857142857142857143m });
+                values: new object[] { 14, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(114), 46.571428571428571428571428571m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 6,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 23, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(892), 36.142857142857142857142857143m });
+                values: new object[] { 3, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(117), 34.142857142857142857142857143m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 7,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 65, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(896), 29.857142857142857142857142857m });
+                values: new object[] { 60, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(120), 52.428571428571428571428571429m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 8,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 37, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(898), 55m });
+                values: new object[] { 62, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(125), 65.571428571428571428571428571m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 9,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 35, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(903), 44.714285714285714285714285714m });
+                values: new object[] { 61, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(128), 31.571428571428571428571428571m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 10,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 17, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(906), 80.42857142857142857142857143m });
+                values: new object[] { 51, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(131), 85.57142857142857142857142857m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 11,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 10, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(909), 70.571428571428571428571428571m });
+                values: new object[] { 9, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(134), 80.14285714285714285714285714m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 12,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 17, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(914), 45.285714285714285714285714286m });
+                values: new object[] { 8, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(159), 44.714285714285714285714285714m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 13,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 28, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(917), 81.42857142857142857142857143m });
+                values: new object[] { 47, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(163), 39.571428571428571428571428571m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 14,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 51, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(919), 70m });
+                values: new object[] { 39, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(166), 84m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 15,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 5, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(922), 82.57142857142857142857142857m });
+                values: new object[] { 64, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(169), 54.714285714285714285714285714m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 16,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 17, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(925), 22m });
+                values: new object[] { 11, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(173), 66.285714285714285714285714286m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 17,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 23, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(928), 36.571428571428571428571428571m });
+                values: new object[] { 75, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(175), 55m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 18,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 22, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(977), 58.714285714285714285714285714m });
+                values: new object[] { 71, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(179), 41m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 19,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 13, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(979), 33m });
+                values: new object[] { 15, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(182), 26.142857142857142857142857143m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 20,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 35, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(982), 46.571428571428571428571428571m });
+                values: new object[] { 67, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(186), 83.28571428571428571428571429m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 21,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 55, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(986), 48.714285714285714285714285714m });
+                values: new object[] { 18, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(189), 66.571428571428571428571428571m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 22,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 45, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(989), 79.85714285714285714285714286m });
+                values: new object[] { 24, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(192), 68.285714285714285714285714286m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 23,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 66, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(993), 69.428571428571428571428571429m });
+                values: new object[] { 51, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(195), 61.285714285714285714285714286m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 24,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 40, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(996), 22.571428571428571428571428571m });
+                values: new object[] { 67, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(199), 65m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 25,
-                columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 46, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1000), 49.571428571428571428571428571m });
+                columns: new[] { "DateTime", "Price" },
+                values: new object[] { new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(202), 60.285714285714285714285714286m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 26,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 77, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1003), 67.571428571428571428571428571m });
+                values: new object[] { 68, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(205), 72.857142857142857142857142857m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 27,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 4, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1006), 37.857142857142857142857142857m });
+                values: new object[] { 51, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(208), 53.857142857142857142857142857m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 28,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 73, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1009), 48.857142857142857142857142857m });
+                values: new object[] { 8, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(211), 68.857142857142857142857142857m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 29,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 24, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1012), 49m });
+                values: new object[] { 2, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(214), 54.571428571428571428571428571m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 30,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 51, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1016), 44.857142857142857142857142857m });
+                values: new object[] { 58, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(217), 43m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 31,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 58, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1019), 82m });
+                values: new object[] { 19, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(220), 77.285714285714285714285714286m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 32,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 61, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1022), 49.571428571428571428571428571m });
+                values: new object[] { 11, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(225), 64.428571428571428571428571429m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 33,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 67, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1025), 67.142857142857142857142857143m });
+                values: new object[] { 18, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(228), 47.714285714285714285714285714m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 34,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 10, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1029), 27.142857142857142857142857143m });
+                values: new object[] { 18, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(231), 27m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 35,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 11, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1033), 73.571428571428571428571428571m });
+                values: new object[] { 56, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(234), 46.714285714285714285714285714m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 36,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 33, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1036), 39.857142857142857142857142857m });
+                values: new object[] { 66, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(238), 48.285714285714285714285714286m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 37,
                 columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 20, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1039), 45.714285714285714285714285714m });
+                values: new object[] { 14, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(241), 22.857142857142857142857142857m });
 
             migrationBuilder.InsertData(
                 table: "Items",
                 columns: new[] { "Id", "BookId", "DateTime", "Description", "Photo", "Price", "State", "UserId" },
                 values: new object[,]
                 {
-                    { 38, 37, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1042), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 34m, "bardzo dobry", 3 },
-                    { 39, 55, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1045), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 41.571428571428571428571428571m, "bardzo dobry", 4 },
-                    { 40, 44, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1048), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 41.142857142857142857142857143m, "bardzo dobry", 5 },
-                    { 41, 10, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1052), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 63.142857142857142857142857143m, "bardzo dobry", 1 },
-                    { 42, 13, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1056), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 30.714285714285714285714285714m, "bardzo dobry", 2 },
-                    { 43, 23, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1059), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 76.285714285714285714285714286m, "bardzo dobry", 3 },
-                    { 44, 37, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1063), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 47.714285714285714285714285714m, "bardzo dobry", 4 },
-                    { 45, 12, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1066), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 34.285714285714285714285714286m, "bardzo dobry", 5 },
-                    { 46, 69, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1069), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 42.428571428571428571428571429m, "bardzo dobry", 1 },
-                    { 47, 2, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1072), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 54.857142857142857142857142857m, "bardzo dobry", 2 },
-                    { 48, 65, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1075), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 20m, "bardzo dobry", 3 },
-                    { 49, 39, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1078), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 39.857142857142857142857142857m, "bardzo dobry", 4 },
-                    { 50, 24, new DateTime(2025, 2, 23, 23, 18, 45, 130, DateTimeKind.Local).AddTicks(1081), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 35.714285714285714285714285714m, "bardzo dobry", 5 }
+                    { 38, 43, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(244), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 79.57142857142857142857142857m, "bardzo dobry", 3 },
+                    { 39, 37, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(247), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 56.857142857142857142857142857m, "bardzo dobry", 4 },
+                    { 40, 58, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(250), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 80.14285714285714285714285714m, "bardzo dobry", 5 },
+                    { 41, 18, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(254), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 61.142857142857142857142857143m, "bardzo dobry", 1 },
+                    { 42, 67, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(257), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 79.42857142857142857142857143m, "bardzo dobry", 2 },
+                    { 43, 12, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(261), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 48.285714285714285714285714286m, "bardzo dobry", 3 },
+                    { 44, 32, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(264), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 45.428571428571428571428571429m, "bardzo dobry", 4 },
+                    { 45, 66, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(267), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 75.857142857142857142857142857m, "bardzo dobry", 5 },
+                    { 46, 36, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(271), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 27.142857142857142857142857143m, "bardzo dobry", 1 },
+                    { 47, 2, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(275), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 25.428571428571428571428571429m, "bardzo dobry", 2 },
+                    { 48, 34, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(278), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 35.857142857142857142857142857m, "bardzo dobry", 3 },
+                    { 49, 43, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(281), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 32.142857142857142857142857143m, "bardzo dobry", 4 },
+                    { 50, 4, new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(284), "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.", "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 52.714285714285714285714285714m, "bardzo dobry", 5 }
                 });
 
             migrationBuilder.InsertData(
@@ -950,14 +950,14 @@ namespace Booker.Migrations
                     { 7, "Fizyka" },
                     { 8, "Geografia" },
                     { 9, "Historia" },
-                    { 10, "HiT" },
+                    { 10, "Historia i teraźniejszość" },
                     { 11, "Informatyka" },
                     { 12, "Matematyka" },
                     { 13, "Podstawy przedsiębiorczości" },
                     { 14, "Biznes i zarządzanie" },
                     { 15, "Plastyka" },
                     { 16, "WOS" },
-                    { 17, "Angielski zawodowy" }
+                    { 17, "Język angielski zawodowy" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -1713,8 +1713,8 @@ namespace Booker.Migrations
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 4,
-                columns: new[] { "DateTime", "Price" },
-                values: new object[] { new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2048), 31.142857142857142857142857143m });
+                columns: new[] { "BookId", "DateTime", "Price" },
+                values: new object[] { 32, new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2048), 31.142857142857142857142857143m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
@@ -1860,8 +1860,8 @@ namespace Booker.Migrations
                 table: "Items",
                 keyColumn: "Id",
                 keyValue: 25,
-                columns: new[] { "BookId", "DateTime", "Price" },
-                values: new object[] { 8, new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2170), 74.571428571428571428571428571m });
+                columns: new[] { "DateTime", "Price" },
+                values: new object[] { new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2170), 74.571428571428571428571428571m });
 
             migrationBuilder.UpdateData(
                 table: "Items",
