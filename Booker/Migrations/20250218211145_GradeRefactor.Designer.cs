@@ -4,6 +4,7 @@ using Booker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Booker.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250218211145_GradeRefactor")]
+    partial class GradeRefactor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,586 @@ namespace Booker.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BookGrades", b =>
+            modelBuilder.Entity("Booker.Data.Book", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Level")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Level = true,
+                            Subject = "Polski",
+                            Title = "Ponad słowami 1 cz. 1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Level = true,
+                            Subject = "Polski",
+                            Title = "Ponad słowami 1 cz. 2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Level = true,
+                            Subject = "Polski",
+                            Title = "Ponad słowami 2 cz. 1"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Level = true,
+                            Subject = "Polski",
+                            Title = "Ponad słowami 2 cz. 2"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Level = true,
+                            Subject = "Polski",
+                            Title = "Ponad słowami 3 cz. 1"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Level = true,
+                            Subject = "Polski",
+                            Title = "Ponad słowami 3 cz. 2"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Level = true,
+                            Subject = "Polski",
+                            Title = "Ponad słowami 4"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Focus 2 Podręcznik"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Focus 3 Podręcznik"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Focus 4 Podręcznik"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Focus 5 Podręcznik"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Focus 2 Ćwiczenia"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Focus 3 Ćwiczenia"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Focus 4 Ćwiczenia"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Focus 5 Ćwiczenia"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "My matura perspectives [nowa era]"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Repetytorium [Macmillan]"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Level = false,
+                            Subject = "Język angielski",
+                            Title = "Repetytorium maturzysty [Oxford]"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Level = true,
+                            Subject = "Język angielski",
+                            Title = "Repetytorium maturzysty [Cambridge, PWN]"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Level = true,
+                            Subject = "Język Niemiecki",
+                            Title = "Welttour Deutsch 1"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Level = true,
+                            Subject = "Język Niemiecki",
+                            Title = "Welttour Deutsch 2"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Level = true,
+                            Subject = "Język Niemiecki",
+                            Title = "Welttour Deutsch 3"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Level = true,
+                            Subject = "Język Niemiecki",
+                            Title = "Welttour Deutsch 4"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Level = true,
+                            Subject = "Język Niemiecki",
+                            Title = "Effekt 1"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Level = true,
+                            Subject = "Język Niemiecki",
+                            Title = "Effekt 2"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Level = true,
+                            Subject = "Język Niemiecki",
+                            Title = "Effekt 3"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Level = true,
+                            Subject = "Język Niemiecki",
+                            Title = "Effekt 4"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Level = true,
+                            Subject = "Biologia",
+                            Title = "Biologia na czasie 1"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Level = true,
+                            Subject = "Biologia",
+                            Title = "Biologia na czasie 2"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Level = true,
+                            Subject = "Biologia",
+                            Title = "Biologia na czasie 3"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Level = false,
+                            Subject = "Biologia",
+                            Title = "Biologia na czasie 1"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Level = false,
+                            Subject = "Biologia",
+                            Title = "Biologia na czasie 2"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Level = false,
+                            Subject = "Biologia",
+                            Title = "Biologia na czasie 3"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Level = true,
+                            Subject = "Chemia",
+                            Title = "To jest chemia 1"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Level = true,
+                            Subject = "Chemia",
+                            Title = "To jest chemia 2"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Level = false,
+                            Subject = "Chemia",
+                            Title = "To jest chemia 1"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Level = false,
+                            Subject = "Chemia",
+                            Title = "To jest chemia 2"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Level = true,
+                            Subject = "EDB",
+                            Title = "Edukacja dla bezpieczeństwa [wsip]"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Level = false,
+                            Subject = "Fizyka",
+                            Title = "Fizyka 1 [wsip]"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Level = false,
+                            Subject = "Fizyka",
+                            Title = "Fizyka 2 [wsip]"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Level = false,
+                            Subject = "Fizyka",
+                            Title = "Fizyka 3 [wsip]"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Level = false,
+                            Subject = "Fizyka",
+                            Title = "Fizyka 4 [wsip]"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Level = true,
+                            Subject = "Fizyka",
+                            Title = "Fizyka 1 [wsip]"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Level = true,
+                            Subject = "Fizyka",
+                            Title = "Fizyka 2 [wsip]"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Level = true,
+                            Subject = "Fizyka",
+                            Title = "Fizyka 3 [wsip]"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Level = true,
+                            Subject = "Fizyka",
+                            Title = "Fizyka 4 [wsip]"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Level = true,
+                            Subject = "Geografia",
+                            Title = "Oblicza geografii 1"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Level = true,
+                            Subject = "Geografia",
+                            Title = "Oblicza geografii 2"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Level = true,
+                            Subject = "Geografia",
+                            Title = "Oblicz geografii karty pracy 1"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Level = true,
+                            Subject = "Geografia",
+                            Title = "Oblicz geografii karty pracy 2"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Level = true,
+                            Subject = "Historia",
+                            Title = "Historia [wsip] 1"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Level = true,
+                            Subject = "Historia",
+                            Title = "Historia [wsip] 2"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Level = true,
+                            Subject = "Historia",
+                            Title = "Historia [wsip] 3"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Level = true,
+                            Subject = "Historia",
+                            Title = "Historia [wsip] 4"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Level = true,
+                            Subject = "HiT",
+                            Title = "Historia i teraźniejszość [wsip] 1"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Level = true,
+                            Subject = "HiT",
+                            Title = "Historia i teraźniejszość [wsip] 2"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Level = true,
+                            Subject = "Informatyka",
+                            Title = "Informatyka [operon]"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Level = true,
+                            Subject = "Informatyka",
+                            Title = "Informatyka dla szkół ponadgimnazjalnych [Migra]"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Level = false,
+                            Subject = "Informatyka",
+                            Title = "Informatyka [operon]"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Level = false,
+                            Subject = "Informatyka",
+                            Title = "Informatyka dla szkół ponadgimnazjalnych [Migra]"
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Level = true,
+                            Subject = "Matematyka",
+                            Title = "NOWA MATeMAtyka 1"
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Level = true,
+                            Subject = "Matematyka",
+                            Title = "NOWA MATeMAtyka 2"
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Level = true,
+                            Subject = "Matematyka",
+                            Title = "NOWA MATeMAtyka 3"
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Level = true,
+                            Subject = "Matematyka",
+                            Title = "NOWA MATeMAtyka 4"
+                        },
+                        new
+                        {
+                            Id = 65,
+                            Level = false,
+                            Subject = "Matematyka",
+                            Title = "NOWA MATeMAtyka 1"
+                        },
+                        new
+                        {
+                            Id = 66,
+                            Level = false,
+                            Subject = "Matematyka",
+                            Title = "NOWA MATeMAtyka 2"
+                        },
+                        new
+                        {
+                            Id = 67,
+                            Level = false,
+                            Subject = "Matematyka",
+                            Title = "NOWA MATeMAtyka 3"
+                        },
+                        new
+                        {
+                            Id = 68,
+                            Level = false,
+                            Subject = "Matematyka",
+                            Title = "NOWA MATeMAtyka 4"
+                        },
+                        new
+                        {
+                            Id = 69,
+                            Level = true,
+                            Subject = "Podstawy przedsiębiorczości",
+                            Title = "Krok w przedsiębiorczość"
+                        },
+                        new
+                        {
+                            Id = 70,
+                            Level = true,
+                            Subject = "Biznes i zarządzanie",
+                            Title = "Krok w biznes i zarządzanie 1"
+                        },
+                        new
+                        {
+                            Id = 71,
+                            Level = true,
+                            Subject = "Biznes i zarządzanie",
+                            Title = "Krok w biznes i zarządzanie 2"
+                        },
+                        new
+                        {
+                            Id = 72,
+                            Level = true,
+                            Subject = "Plastyka",
+                            Title = "Spotkania ze sztuką 1"
+                        },
+                        new
+                        {
+                            Id = 73,
+                            Level = true,
+                            Subject = "WOS",
+                            Title = "W centrum uwagi 1"
+                        },
+                        new
+                        {
+                            Id = 74,
+                            Level = true,
+                            Subject = "WOS",
+                            Title = "W centrum uwagi 2"
+                        },
+                        new
+                        {
+                            Id = 75,
+                            Level = false,
+                            Subject = "Angielski zawodowy",
+                            Title = "Electronics"
+                        },
+                        new
+                        {
+                            Id = 76,
+                            Level = false,
+                            Subject = "Angielski zawodowy",
+                            Title = "Electrician"
+                        },
+                        new
+                        {
+                            Id = 77,
+                            Level = false,
+                            Subject = "Angielski zawodowy",
+                            Title = "Software engineering"
+                        },
+                        new
+                        {
+                            Id = 78,
+                            Level = true,
+                            Subject = "Angielski zawodowy",
+                            Title = "IT [english for IT]"
+                        },
+                        new
+                        {
+                            Id = 79,
+                            Level = false,
+                            Subject = "Informatyka",
+                            Title = "Informatyka w praktyce"
+                        });
+                });
+
+            modelBuilder.Entity("Booker.Data.BookGrade", b =>
                 {
                     b.Property<int>("BookId")
                         .HasColumnType("int");
@@ -215,12 +797,12 @@ namespace Booker.Migrations
                         new
                         {
                             BookId = 36,
-                            GradeId = 1
+                            GradeId = 3
                         },
                         new
                         {
                             BookId = 37,
-                            GradeId = 2
+                            GradeId = 4
                         },
                         new
                         {
@@ -330,12 +912,12 @@ namespace Booker.Migrations
                         new
                         {
                             BookId = 59,
-                            GradeId = 1
+                            GradeId = 3
                         },
                         new
                         {
                             BookId = 60,
-                            GradeId = 2
+                            GradeId = 4
                         },
                         new
                         {
@@ -426,592 +1008,6 @@ namespace Booker.Migrations
                         {
                             BookId = 78,
                             GradeId = 3
-                        },
-                        new
-                        {
-                            BookId = 79,
-                            GradeId = 3
-                        });
-                });
-
-            modelBuilder.Entity("Booker.Data.Book", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool?>("Level")
-                        .IsRequired()
-                        .HasColumnType("bit");
-
-                    b.Property<int>("SubjectId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SubjectId");
-
-                    b.ToTable("Books");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Level = false,
-                            SubjectId = 1,
-                            Title = "Ponad słowami 1 cz. 1"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Level = false,
-                            SubjectId = 1,
-                            Title = "Ponad słowami 1 cz. 2"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Level = false,
-                            SubjectId = 1,
-                            Title = "Ponad słowami 2 cz. 1"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Level = false,
-                            SubjectId = 1,
-                            Title = "Ponad słowami 2 cz. 2"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Level = false,
-                            SubjectId = 1,
-                            Title = "Ponad słowami 3 cz. 1"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Level = false,
-                            SubjectId = 1,
-                            Title = "Ponad słowami 3 cz. 2"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Level = false,
-                            SubjectId = 1,
-                            Title = "Ponad słowami 4"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Focus 2 Podręcznik"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Focus 3 Podręcznik"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Focus 4 Podręcznik"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Focus 5 Podręcznik"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Focus 2 Ćwiczenia"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Focus 3 Ćwiczenia"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Focus 4 Ćwiczenia"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Focus 5 Ćwiczenia"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "My matura perspectives [nowa era]"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Repetytorium [Macmillan]"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Level = true,
-                            SubjectId = 2,
-                            Title = "Repetytorium maturzysty [Oxford]"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Level = false,
-                            SubjectId = 2,
-                            Title = "Repetytorium maturzysty [Cambridge, PWN]"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Level = false,
-                            SubjectId = 3,
-                            Title = "Welttour Deutsch 1"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Level = false,
-                            SubjectId = 3,
-                            Title = "Welttour Deutsch 2"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Level = false,
-                            SubjectId = 3,
-                            Title = "Welttour Deutsch 3"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Level = false,
-                            SubjectId = 3,
-                            Title = "Welttour Deutsch 4"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Level = false,
-                            SubjectId = 3,
-                            Title = "Effekt 1"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Level = false,
-                            SubjectId = 3,
-                            Title = "Effekt 2"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Level = false,
-                            SubjectId = 3,
-                            Title = "Effekt 3"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Level = false,
-                            SubjectId = 3,
-                            Title = "Effekt 4"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Level = false,
-                            SubjectId = 4,
-                            Title = "Biologia na czasie 1"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Level = false,
-                            SubjectId = 4,
-                            Title = "Biologia na czasie 2"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Level = false,
-                            SubjectId = 4,
-                            Title = "Biologia na czasie 3"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Level = true,
-                            SubjectId = 4,
-                            Title = "Biologia na czasie 1"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Level = true,
-                            SubjectId = 4,
-                            Title = "Biologia na czasie 2"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Level = true,
-                            SubjectId = 4,
-                            Title = "Biologia na czasie 3"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Level = false,
-                            SubjectId = 5,
-                            Title = "To jest chemia 1"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Level = false,
-                            SubjectId = 5,
-                            Title = "To jest chemia 2"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Level = true,
-                            SubjectId = 5,
-                            Title = "To jest chemia 1"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Level = true,
-                            SubjectId = 5,
-                            Title = "To jest chemia 2"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Level = false,
-                            SubjectId = 6,
-                            Title = "Edukacja dla bezpieczeństwa [wsip]"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Level = true,
-                            SubjectId = 7,
-                            Title = "Fizyka 1 [wsip]"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Level = true,
-                            SubjectId = 7,
-                            Title = "Fizyka 2 [wsip]"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Level = true,
-                            SubjectId = 7,
-                            Title = "Fizyka 3 [wsip]"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Level = true,
-                            SubjectId = 7,
-                            Title = "Fizyka 4 [wsip]"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Level = false,
-                            SubjectId = 7,
-                            Title = "Fizyka 1 [wsip]"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Level = false,
-                            SubjectId = 7,
-                            Title = "Fizyka 2 [wsip]"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Level = false,
-                            SubjectId = 7,
-                            Title = "Fizyka 3 [wsip]"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Level = false,
-                            SubjectId = 7,
-                            Title = "Fizyka 4 [wsip]"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Level = false,
-                            SubjectId = 8,
-                            Title = "Oblicza geografii 1"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Level = false,
-                            SubjectId = 8,
-                            Title = "Oblicza geografii 2"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Level = false,
-                            SubjectId = 8,
-                            Title = "Oblicz geografii karty pracy 1"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Level = false,
-                            SubjectId = 8,
-                            Title = "Oblicz geografii karty pracy 2"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Level = false,
-                            SubjectId = 9,
-                            Title = "Historia [wsip] 1"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Level = false,
-                            SubjectId = 9,
-                            Title = "Historia [wsip] 2"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            Level = false,
-                            SubjectId = 9,
-                            Title = "Historia [wsip] 3"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            Level = false,
-                            SubjectId = 9,
-                            Title = "Historia [wsip] 4"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            Level = false,
-                            SubjectId = 10,
-                            Title = "Historia i teraźniejszość [wsip] 1"
-                        },
-                        new
-                        {
-                            Id = 56,
-                            Level = false,
-                            SubjectId = 10,
-                            Title = "Historia i teraźniejszość [wsip] 2"
-                        },
-                        new
-                        {
-                            Id = 57,
-                            Level = false,
-                            SubjectId = 11,
-                            Title = "Informatyka [operon]"
-                        },
-                        new
-                        {
-                            Id = 58,
-                            Level = false,
-                            SubjectId = 11,
-                            Title = "Informatyka dla szkół ponadgimnazjalnych [Migra]"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            Level = true,
-                            SubjectId = 11,
-                            Title = "Informatyka [operon]"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            Level = true,
-                            SubjectId = 11,
-                            Title = "Informatyka dla szkół ponadgimnazjalnych [Migra]"
-                        },
-                        new
-                        {
-                            Id = 61,
-                            Level = false,
-                            SubjectId = 12,
-                            Title = "NOWA MATeMAtyka 1"
-                        },
-                        new
-                        {
-                            Id = 62,
-                            Level = false,
-                            SubjectId = 12,
-                            Title = "NOWA MATeMAtyka 2"
-                        },
-                        new
-                        {
-                            Id = 63,
-                            Level = false,
-                            SubjectId = 12,
-                            Title = "NOWA MATeMAtyka 3"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            Level = false,
-                            SubjectId = 12,
-                            Title = "NOWA MATeMAtyka 4"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            Level = true,
-                            SubjectId = 12,
-                            Title = "NOWA MATeMAtyka 1"
-                        },
-                        new
-                        {
-                            Id = 66,
-                            Level = true,
-                            SubjectId = 12,
-                            Title = "NOWA MATeMAtyka 2"
-                        },
-                        new
-                        {
-                            Id = 67,
-                            Level = true,
-                            SubjectId = 12,
-                            Title = "NOWA MATeMAtyka 3"
-                        },
-                        new
-                        {
-                            Id = 68,
-                            Level = true,
-                            SubjectId = 12,
-                            Title = "NOWA MATeMAtyka 4"
-                        },
-                        new
-                        {
-                            Id = 69,
-                            Level = false,
-                            SubjectId = 13,
-                            Title = "Krok w przedsiębiorczość"
-                        },
-                        new
-                        {
-                            Id = 70,
-                            Level = false,
-                            SubjectId = 14,
-                            Title = "Krok w biznes i zarządzanie 1"
-                        },
-                        new
-                        {
-                            Id = 71,
-                            Level = false,
-                            SubjectId = 14,
-                            Title = "Krok w biznes i zarządzanie 2"
-                        },
-                        new
-                        {
-                            Id = 72,
-                            Level = false,
-                            SubjectId = 15,
-                            Title = "Spotkania ze sztuką 1"
-                        },
-                        new
-                        {
-                            Id = 73,
-                            Level = false,
-                            SubjectId = 16,
-                            Title = "W centrum uwagi 1"
-                        },
-                        new
-                        {
-                            Id = 74,
-                            Level = false,
-                            SubjectId = 16,
-                            Title = "W centrum uwagi 2"
-                        },
-                        new
-                        {
-                            Id = 75,
-                            Level = true,
-                            SubjectId = 17,
-                            Title = "Electronics"
-                        },
-                        new
-                        {
-                            Id = 76,
-                            Level = true,
-                            SubjectId = 17,
-                            Title = "Electrician"
-                        },
-                        new
-                        {
-                            Id = 77,
-                            Level = true,
-                            SubjectId = 17,
-                            Title = "Software engineering"
-                        },
-                        new
-                        {
-                            Id = 78,
-                            Level = false,
-                            SubjectId = 17,
-                            Title = "IT [english for IT]"
-                        },
-                        new
-                        {
-                            Id = 79,
-                            Level = true,
-                            SubjectId = 11,
-                            Title = "Informatyka w praktyce"
                         });
                 });
 
@@ -1103,217 +1099,162 @@ namespace Booker.Migrations
                         new
                         {
                             Id = 1,
-                            BookId = 15,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(44),
+                            BookId = 3,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(1974),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 40.142857142857142857142857143m,
+                            Price = 73.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
-                            BookId = 72,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(102),
+                            BookId = 74,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2035),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 72m,
+                            Price = 79.28571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 3,
-                            BookId = 2,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(106),
+                            BookId = 3,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2042),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 56.714285714285714285714285714m,
+                            Price = 64.428571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 4,
-                            BookId = 73,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(109),
+                            BookId = 32,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2048),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 79.28571428571428571428571429m,
+                            Price = 31.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 5,
-                            BookId = 14,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(114),
+                            BookId = 46,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2054),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 46.571428571428571428571428571m,
+                            Price = 36.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 6,
-                            BookId = 3,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(117),
+                            BookId = 11,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2060),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 34.142857142857142857142857143m,
+                            Price = 68.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 7,
-                            BookId = 60,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(120),
+                            BookId = 76,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2065),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 52.428571428571428571428571429m,
+                            Price = 76.428571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 8,
-                            BookId = 62,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(125),
+                            BookId = 29,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2071),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 65.571428571428571428571428571m,
+                            Price = 82.42857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 9,
-                            BookId = 61,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(128),
+                            BookId = 21,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2077),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 31.571428571428571428571428571m,
+                            Price = 25.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 10,
-                            BookId = 51,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(131),
+                            BookId = 77,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2083),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 85.57142857142857142857142857m,
+                            Price = 71.714285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 11,
-                            BookId = 9,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(134),
+                            BookId = 66,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2088),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 80.14285714285714285714285714m,
+                            Price = 56.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 12,
-                            BookId = 8,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(159),
+                            BookId = 12,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2095),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 44.714285714285714285714285714m,
+                            Price = 23.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 13,
-                            BookId = 47,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(163),
+                            BookId = 73,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2101),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 39.571428571428571428571428571m,
+                            Price = 30.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 14,
-                            BookId = 39,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(166),
+                            BookId = 74,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2107),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 84m,
+                            Price = 42.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 15,
-                            BookId = 64,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(169),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 54.714285714285714285714285714m,
-                            State = "bardzo dobry",
-                            UserId = 5
-                        },
-                        new
-                        {
-                            Id = 16,
-                            BookId = 11,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(173),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 66.285714285714285714285714286m,
-                            State = "bardzo dobry",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 17,
-                            BookId = 75,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(175),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 55m,
-                            State = "bardzo dobry",
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 18,
-                            BookId = 71,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(179),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 41m,
-                            State = "bardzo dobry",
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 19,
-                            BookId = 15,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(182),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 26.142857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 20,
-                            BookId = 67,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(186),
+                            BookId = 53,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2112),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                             Price = 83.28571428571428571428571429m,
@@ -1322,45 +1263,100 @@ namespace Booker.Migrations
                         },
                         new
                         {
-                            Id = 21,
-                            BookId = 18,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(189),
+                            Id = 16,
+                            BookId = 46,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2118),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 66.571428571428571428571428571m,
+                            Price = 47.571428571428571428571428571m,
+                            State = "bardzo dobry",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 17,
+                            BookId = 35,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2124),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 79m,
+                            State = "bardzo dobry",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 18,
+                            BookId = 69,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2131),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 50.714285714285714285714285714m,
+                            State = "bardzo dobry",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 19,
+                            BookId = 11,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2137),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 30.857142857142857142857142857m,
+                            State = "bardzo dobry",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 20,
+                            BookId = 69,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2142),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 65m,
+                            State = "bardzo dobry",
+                            UserId = 5
+                        },
+                        new
+                        {
+                            Id = 21,
+                            BookId = 73,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2147),
+                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
+                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                            Price = 28.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 22,
-                            BookId = 24,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(192),
+                            BookId = 61,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2152),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 68.285714285714285714285714286m,
+                            Price = 42.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 23,
-                            BookId = 51,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(195),
+                            BookId = 31,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2159),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 61.285714285714285714285714286m,
+                            Price = 24.714285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 24,
-                            BookId = 67,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(199),
+                            BookId = 1,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2165),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 65m,
+                            Price = 78.428571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
@@ -1368,391 +1364,144 @@ namespace Booker.Migrations
                         {
                             Id = 25,
                             BookId = 8,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(202),
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2170),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 60.285714285714285714285714286m,
+                            Price = 74.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 26,
-                            BookId = 68,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(205),
+                            BookId = 50,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2175),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 72.857142857142857142857142857m,
+                            Price = 53.428571428571428571428571429m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 27,
-                            BookId = 51,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(208),
+                            BookId = 24,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2181),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 53.857142857142857142857142857m,
+                            Price = 45.285714285714285714285714286m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 28,
-                            BookId = 8,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(211),
+                            BookId = 9,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2186),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 68.857142857142857142857142857m,
+                            Price = 22.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 29,
-                            BookId = 2,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(214),
+                            BookId = 48,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2209),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 54.571428571428571428571428571m,
+                            Price = 51.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 30,
-                            BookId = 58,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(217),
+                            BookId = 42,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2217),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 43m,
+                            Price = 62.714285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 31,
-                            BookId = 19,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(220),
+                            BookId = 74,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2221),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 77.285714285714285714285714286m,
+                            Price = 57.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 32,
-                            BookId = 11,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(225),
+                            BookId = 20,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2227),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 64.428571428571428571428571429m,
+                            Price = 47.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 2
                         },
                         new
                         {
                             Id = 33,
-                            BookId = 18,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(228),
+                            BookId = 27,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2233),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 47.714285714285714285714285714m,
+                            Price = 72.714285714285714285714285714m,
                             State = "bardzo dobry",
                             UserId = 3
                         },
                         new
                         {
                             Id = 34,
-                            BookId = 18,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(231),
+                            BookId = 4,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2238),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 27m,
+                            Price = 61.571428571428571428571428571m,
                             State = "bardzo dobry",
                             UserId = 4
                         },
                         new
                         {
                             Id = 35,
-                            BookId = 56,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(234),
+                            BookId = 69,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2245),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 46.714285714285714285714285714m,
+                            Price = 62.857142857142857142857142857m,
                             State = "bardzo dobry",
                             UserId = 5
                         },
                         new
                         {
                             Id = 36,
-                            BookId = 66,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(238),
+                            BookId = 34,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2251),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 48.285714285714285714285714286m,
+                            Price = 79.142857142857142857142857143m,
                             State = "bardzo dobry",
                             UserId = 1
                         },
                         new
                         {
                             Id = 37,
-                            BookId = 14,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(241),
+                            BookId = 39,
+                            DateTime = new DateTime(2025, 2, 18, 22, 11, 40, 8, DateTimeKind.Local).AddTicks(2255),
                             Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
                             Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 22.857142857142857142857142857m,
+                            Price = 41m,
                             State = "bardzo dobry",
                             UserId = 2
-                        },
-                        new
-                        {
-                            Id = 38,
-                            BookId = 43,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(244),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 79.57142857142857142857142857m,
-                            State = "bardzo dobry",
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 39,
-                            BookId = 37,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(247),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 56.857142857142857142857142857m,
-                            State = "bardzo dobry",
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 40,
-                            BookId = 58,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(250),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 80.14285714285714285714285714m,
-                            State = "bardzo dobry",
-                            UserId = 5
-                        },
-                        new
-                        {
-                            Id = 41,
-                            BookId = 18,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(254),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 61.142857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 42,
-                            BookId = 67,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(257),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 79.42857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 43,
-                            BookId = 12,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(261),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 48.285714285714285714285714286m,
-                            State = "bardzo dobry",
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 44,
-                            BookId = 32,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(264),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 45.428571428571428571428571429m,
-                            State = "bardzo dobry",
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 45,
-                            BookId = 66,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(267),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 75.857142857142857142857142857m,
-                            State = "bardzo dobry",
-                            UserId = 5
-                        },
-                        new
-                        {
-                            Id = 46,
-                            BookId = 36,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(271),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 27.142857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 47,
-                            BookId = 2,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(275),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 25.428571428571428571428571429m,
-                            State = "bardzo dobry",
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 48,
-                            BookId = 34,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(278),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 35.857142857142857142857142857m,
-                            State = "bardzo dobry",
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 49,
-                            BookId = 43,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(281),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 32.142857142857142857142857143m,
-                            State = "bardzo dobry",
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 50,
-                            BookId = 4,
-                            DateTime = new DateTime(2025, 2, 24, 14, 52, 33, 490, DateTimeKind.Local).AddTicks(284),
-                            Description = "Książka w dobrym stanie, prawie nie używana, nie zalana, rogi delikatnie zagięte, polecam kebab Zahir i pytam czy idziecie na sylwestra do zduniaka.",
-                            Photo = "https://images.unsplash.com/photo-1517770413964-df8ca61194a6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                            Price = 52.714285714285714285714285714m,
-                            State = "bardzo dobry",
-                            UserId = 5
-                        });
-                });
-
-            modelBuilder.Entity("Booker.Data.Subject", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Subjects");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Język polski"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Język angielski"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Język niemiecki"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Biologia"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Chemia"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "EDB"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Fizyka"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "Geografia"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "Historia"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "Historia i teraźniejszość"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Name = "Informatyka"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Name = "Matematyka"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Name = "Podstawy przedsiębiorczości"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Name = "Biznes i zarządzanie"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Name = "Plastyka"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Name = "WOS"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Name = "Język angielski zawodowy"
                         });
                 });
 
@@ -1835,7 +1584,7 @@ namespace Booker.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b60c32af-3b1d-4afb-a38c-492a843446c5",
+                            ConcurrencyStamp = "174cdadd-9313-4490-bfe8-ec5e8ed021a2",
                             Email = "user1@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -1849,7 +1598,7 @@ namespace Booker.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dd4497ab-bbfd-419f-b141-00028859ecfe",
+                            ConcurrencyStamp = "cdf967bd-0141-4684-a610-3c73585598df",
                             Email = "user2@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -1863,7 +1612,7 @@ namespace Booker.Migrations
                         {
                             Id = 3,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4af4eabd-7d9c-4968-bc48-c5f5a97003be",
+                            ConcurrencyStamp = "adcdc119-b8b4-4b72-8a19-e72647499b02",
                             Email = "user3@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -1877,7 +1626,7 @@ namespace Booker.Migrations
                         {
                             Id = 4,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "47fde348-0bb9-4535-9046-9dceba8c72d1",
+                            ConcurrencyStamp = "121fcf76-a889-4322-82d6-5293236cb093",
                             Email = "user4@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -1891,7 +1640,7 @@ namespace Booker.Migrations
                         {
                             Id = 5,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7973b629-c99d-4ab7-b10d-9c7c7f351c52",
+                            ConcurrencyStamp = "22d2ade9-2628-4abb-a13a-030368b4d716",
                             Email = "user5@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -2040,30 +1789,23 @@ namespace Booker.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BookGrades", b =>
+            modelBuilder.Entity("Booker.Data.BookGrade", b =>
                 {
-                    b.HasOne("Booker.Data.Book", null)
-                        .WithMany()
+                    b.HasOne("Booker.Data.Book", "Book")
+                        .WithMany("BookGrades")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Booker.Data.Grade", null)
-                        .WithMany()
+                    b.HasOne("Booker.Data.Grade", "Grade")
+                        .WithMany("BookGrades")
                         .HasForeignKey("GradeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("Booker.Data.Book", b =>
-                {
-                    b.HasOne("Booker.Data.Subject", "Subject")
-                        .WithMany()
-                        .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Book");
 
-                    b.Navigation("Subject");
+                    b.Navigation("Grade");
                 });
 
             modelBuilder.Entity("Booker.Data.Item", b =>
@@ -2138,7 +1880,14 @@ namespace Booker.Migrations
 
             modelBuilder.Entity("Booker.Data.Book", b =>
                 {
+                    b.Navigation("BookGrades");
+
                     b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("Booker.Data.Grade", b =>
+                {
+                    b.Navigation("BookGrades");
                 });
 
             modelBuilder.Entity("Booker.Data.User", b =>

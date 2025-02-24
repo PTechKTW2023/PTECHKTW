@@ -20,54 +20,35 @@
 
             <div class="grid">
                 <select name="grade">
-                    <option value="">@GradeLevels.Wszystkie</option>
+                    <option value="">Wszystkie klasy</option>
                     @{
-                        var gradeLevels = typeof(GradeLevels)
-                            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
-                            .Where(f => f.FieldType == typeof(string))
-                            .Select(f => f.GetValue(null) as string)
-                            .Where(s => s != GradeLevels.Wszystkie)
-                            .OrderBy(s => s);
-
-                        foreach (var gradeLevel in gradeLevels)
+                        if (Model.Grades != null)
                         {
-                                    <option value="@gradeLevel">@gradeLevel</option>
+                            foreach (var grade in Model.Grades)
+                            {
+                                <option value="@grade">Klasa @grade.</option>
+                            }
                         }
                     }
                 </select>
 
                 <select name="subject">
-                    <option value="">@SubjectNames.Wszystkie</option>
+                    <option value="">Wszystkie przedmioty</option>
                     @{
-                        var subjectNames = typeof(SubjectNames)
-                            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
-                            .Where(f => f.FieldType == typeof(string))
-                            .Select(f => f.GetValue(null) as string)
-                            .Where(s => s != SubjectNames.Wszystkie)
-                            .OrderBy(s => s);
-
-                        foreach (var subjectName in subjectNames)
+                        if (Model.Subjects != null)
                         {
-                                    <option value="@subjectName">@subjectName</option>
+                            foreach (var subject in Model.Subjects)
+                            {
+                                <option value="@subject">@subject</option>
+                            }
                         }
                     }
                 </select>
 
                 <select name="level">
-                    <option value="">@BookLevels.Wszystkie</option>
-                    @{
-                        var bookLevels = typeof(BookLevels)
-                            .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
-                            .Where(f => f.FieldType == typeof(string))
-                            .Select(f => f.GetValue(null) as string)
-                            .Where(s => s != BookLevels.Wszystkie)
-                            .OrderBy(s => s);
-
-                        foreach (var bookLevel in bookLevels)
-                        {
-                                    <option value="@bookLevel">@bookLevel</option>
-                        }
-                    }
+                    <option value="">Wszystkie poziomy</option>
+                    <option value="Podstawa">Podstawa</option>
+                    <option value="Rozszerzenie">Rozszerzenie</option>
                 </select>
 
                 <input type="number" name="minPrice" placeholder="Cena min." />
