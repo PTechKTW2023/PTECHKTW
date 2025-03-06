@@ -15,7 +15,7 @@ namespace Booker.Data
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+           
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
