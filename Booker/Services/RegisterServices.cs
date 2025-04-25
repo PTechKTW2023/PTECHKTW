@@ -1,5 +1,5 @@
-﻿using static Booker.Services.SendMailSvc;
-using System.Configuration;
+﻿using System.Configuration;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace Booker.Services
 {
@@ -7,8 +7,8 @@ namespace Booker.Services
     {
         public static IServiceCollection AddBookerServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.Configure<SmtpSettings>(configuration.GetSection("SmtpSettings"));           
-            services.AddTransient<SendMailSvc>();
+            services.Configure<SendMailSvc.SmtpSettings>(configuration.GetSection("SmtpSettings"));   
+            services.AddSingleton<IEmailSender, SendMailSvc>();
             return services;
         }
     }

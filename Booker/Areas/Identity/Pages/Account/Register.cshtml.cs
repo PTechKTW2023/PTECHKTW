@@ -135,14 +135,11 @@ namespace Booker.Areas.Identity.Pages.Account
                         "/Account/ConfirmEmail",
                         pageHandler: null,
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
-                        protocol: Request.Scheme);
-
-                    await _emailSender.SendEmailAsync(Input.Email, "Potwierdź swój e-mail",
-                        $"Proszę potwierdź swoje konto klikając w ten <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>link</a>.");
+                        protocol: Request.Scheme);                  
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("RegisterConfirmation", new { userName = Input.UserName, email = Input.Email, callbackUrl, returnUrl = returnUrl });
                     }
                     else
                     {
