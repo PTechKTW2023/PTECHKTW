@@ -46,7 +46,7 @@ namespace Booker.Areas.Identity.Pages.Account
         /// </summary>
         public string EmailConfirmationUrl { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(string userName, string email, string callbackUrl, string returnUrl = null)
+        public async Task<IActionResult> OnGetAsync(string userName, string email, string returnUrl = null)
         {
             if (userName == null)
             {
@@ -60,7 +60,15 @@ namespace Booker.Areas.Identity.Pages.Account
                 return NotFound($"Unable to load user: '{userName}'.");
             }
 
-            
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
+            var callbackUrl = Url.Page(
+                        "/Account/ConfirmEmail",
+                        pageHandler: null,
+                        values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
+                        protocol: Request.Scheme);
+
             await _sender.SendEmailAsync(email, "Potwierdź swój e-mail",
                       $"Proszę potwierdź swoje konto klikając w ten <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>link</a>.");
 

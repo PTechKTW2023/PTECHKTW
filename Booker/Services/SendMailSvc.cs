@@ -43,7 +43,7 @@ namespace Booker.Services
             message.Subject = subject;
             message.Body = htmlMessage;
             message.To.Add(email);
-            message.From = new MailAddress("no-replay@textbooker.pl");
+            message.From = new MailAddress("no-reply@textbooker.pl");
             message.IsBodyHtml = true;
             await this.Send(message);
         }
